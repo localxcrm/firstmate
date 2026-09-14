@@ -1,0 +1,16 @@
+{
+  "input": "/Users/rodrigocampos/.no-mistakes/evidence/01M2GZ3SQNGTN7JC2YRYZ1BEFN/samples/docx_alternate_content_selects_one_representation_without_deduplicating_text/121/payload.docx",
+  "expected": "[word/document.xml]\nBefore\nTotal: 100\nAfter\nTotal: 100\nTotal: 100",
+  "outputs": {
+    "before_d417e30": {
+      "extracted_text": "[word/document.xml]\nBefore\nTotal: 100\nLater choice\nTotal: 100\nAfter\nTotal: 100\nTotal: 100",
+      "frames": [],
+      "coverage": "Office text and cached cell values only; no macros, formulas, embedded media or layout"
+    },
+    "target_272ec4e": {
+      "extracted_text": "[word/document.xml]\nBefore\nTotal: 100\nAfter\nTotal: 100\nTotal: 100",
+      "frames": [],
+      "coverage": "Office text and cached cell values only; no macros, formulas, embedded media or layout"
+    }
+  }
+}

@@ -1,0 +1,913 @@
+{
+  "scope": "LOCAL ONLY. Real decoding, inbox, authenticated main CLI and SQLite. No LLM. Deterministic fixture interpretation; synthetic audio with injected STT. Transport and delivery receipts simulated. Real-account acceptance remains pending with main.",
+  "flows": [
+    {
+      "modality": "text",
+      "claim": {
+        "attachment": null,
+        "decisions": [],
+        "fresh_claim": true,
+        "history": [
+          {
+            "body": "Quanto é 37 + 5?",
+            "kind": "text",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "state": "claimed"
+          }
+        ],
+        "input_scope": "text",
+        "related_request": null,
+        "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+        "responses": [
+          {
+            "actor": "bridge",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "kind": "received",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+          }
+        ],
+        "schema": "fm-whatsapp-context.v1",
+        "state": "claimed",
+        "tasks": [],
+        "text": "Quanto é 37 + 5?"
+      },
+      "computed_text_reply": "37 + 5 = 42.",
+      "emit_result": {
+        "decision": null,
+        "event": "event-1789426422129017000",
+        "new_event": true
+      },
+      "simulated_sends": [
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        },
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "37 + 5 = 42.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        }
+      ],
+      "persisted_request": {
+        "wamid": "wamid.input.1",
+        "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+        "sender": "user:owner",
+        "stamp": 1789426423,
+        "kind": "text",
+        "body": "Quanto é 37 + 5?",
+        "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.1\",\"text\":{\"body\":\"Quanto \\u00e9 37 + 5?\"},\"timestamp\":\"1789426423\",\"type\":\"text\"}",
+        "state": "completed",
+        "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b",
+        "envelope": "{\"config\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-_04yz5c5/home/config/whatsapp.json\",\"home\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-_04yz5c5/home\",\"request\":\"wa-cd9a792e6ec32fed0c1fa60513878024\",\"schema\":\"fm-whatsapp-input.v1\",\"text\":\"Quanto é 37 + 5?\"}",
+        "received": 1789426421.7622201
+      },
+      "persisted_outbox_after_simulated_receipt": [
+        {
+          "seq": 1,
+          "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+          "part": 0,
+          "state": "delivered",
+          "wamid": "wamid.simulated.1",
+          "attempts": 1
+        },
+        {
+          "seq": 2,
+          "event": "event-1789426422129017000",
+          "part": 0,
+          "state": "delivered",
+          "wamid": "wamid.simulated.2",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "modality": "image",
+      "claim": {
+        "attachment": {
+          "caption": "Descreva a forma",
+          "coverage": "complete image preview",
+          "extracted_text": null,
+          "filename": "anexo.png",
+          "frames": [
+            {
+              "height": 80,
+              "path": "/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-ou2r7qzu/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/image/payload.jpg",
+              "width": 80
+            }
+          ],
+          "kind": "image",
+          "mime": "image/png",
+          "path": "/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-ou2r7qzu/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.png",
+          "transcript": null,
+          "voice": false
+        },
+        "decisions": [],
+        "fresh_claim": true,
+        "history": [
+          {
+            "body": "Descreva a forma",
+            "kind": "image",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "state": "claimed"
+          }
+        ],
+        "input_scope": "interpret_attachment",
+        "related_request": null,
+        "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+        "responses": [
+          {
+            "actor": "bridge",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "kind": "received",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+          }
+        ],
+        "schema": "fm-whatsapp-context.v1",
+        "state": "claimed",
+        "tasks": [],
+        "text": "Descreva a forma"
+      },
+      "computed_text_reply": "A prévia mostra um quadrado preto sobre fundo branco.",
+      "emit_result": {
+        "decision": null,
+        "event": "event-1789426422738101000",
+        "new_event": true
+      },
+      "simulated_sends": [
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        },
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "A prévia mostra um quadrado preto sobre fundo branco.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        }
+      ],
+      "persisted_request": {
+        "wamid": "wamid.input.1",
+        "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+        "sender": "user:owner",
+        "stamp": 1789426424,
+        "kind": "image",
+        "body": "Descreva a forma",
+        "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.1\",\"image\":{\"caption\":\"Descreva a forma\",\"id\":\"media-1789426422292533000\",\"mime_type\":\"image/png\",\"sha256\":\"yh/apYrIpr25SXBud3IEg6K5FOLxFoLglwDT2+g/CG8=\"},\"timestamp\":\"1789426424\",\"type\":\"image\"}",
+        "state": "completed",
+        "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b",
+        "envelope": "{\"attachment\":{\"caption\":\"Descreva a forma\",\"coverage\":\"complete image preview\",\"extracted_text\":null,\"filename\":\"anexo.png\",\"frames\":[{\"height\":80,\"path\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-ou2r7qzu/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/image/payload.jpg\",\"width\":80}],\"kind\":\"image\",\"mime\":\"image/png\",\"path\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-ou2r7qzu/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.png\",\"sha256\":\"ca1fdaa58ac8a6bdb949706e77720483a2b914e2f11682e09700d3dbe83f086f\",\"transcript\":null,\"voice\":false},\"config\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-ou2r7qzu/home/config/whatsapp.json\",\"home\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-ou2r7qzu/home\",\"request\":\"wa-cd9a792e6ec32fed0c1fa60513878024\",\"schema\":\"fm-whatsapp-input.v1\",\"text\":\"Descreva a forma\"}",
+        "received": 1789426422.2613912
+      },
+      "persisted_outbox_after_simulated_receipt": [
+        {
+          "seq": 1,
+          "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+          "part": 0,
+          "state": "delivered",
+          "wamid": "wamid.simulated.1",
+          "attempts": 1
+        },
+        {
+          "seq": 2,
+          "event": "event-1789426422738101000",
+          "part": 0,
+          "state": "delivered",
+          "wamid": "wamid.simulated.2",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "modality": "pdf",
+      "claim": {
+        "attachment": {
+          "caption": "",
+          "coverage": "all pages; previews plus extractable text, no OCR claim",
+          "extracted_text": "[page 1]\nTotal: 100",
+          "filename": "anexo.pdf",
+          "frames": [
+            {
+              "height": 400,
+              "page": 1,
+              "path": "/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-tr4edeo4/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/page-1/payload.jpg",
+              "width": 400
+            }
+          ],
+          "kind": "document",
+          "mime": "application/pdf",
+          "pages": 1,
+          "path": "/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-tr4edeo4/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.pdf",
+          "transcript": null,
+          "voice": false
+        },
+        "decisions": [],
+        "fresh_claim": true,
+        "history": [
+          {
+            "body": "Documento recebido.\n\n[page 1]\nTotal: 100",
+            "kind": "document",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "state": "claimed"
+          }
+        ],
+        "input_scope": "interpret_attachment",
+        "related_request": null,
+        "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+        "responses": [
+          {
+            "actor": "bridge",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "kind": "received",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+          }
+        ],
+        "schema": "fm-whatsapp-context.v1",
+        "state": "claimed",
+        "tasks": [],
+        "text": "Documento recebido.\n\n[page 1]\nTotal: 100"
+      },
+      "computed_text_reply": "O total informado no arquivo é 100.",
+      "emit_result": {
+        "decision": null,
+        "event": "event-1789426423345545000",
+        "new_event": true
+      },
+      "simulated_sends": [
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        },
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "O total informado no arquivo é 100.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        }
+      ],
+      "persisted_request": {
+        "wamid": "wamid.input.1",
+        "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+        "sender": "user:owner",
+        "stamp": 1789426424,
+        "kind": "document",
+        "body": "Documento recebido.\n\n[page 1]\nTotal: 100",
+        "raw": "{\"document\":{\"id\":\"media-1789426422899225000\",\"mime_type\":\"application/pdf\",\"sha256\":\"H95pPPFDk9KPHUNwEcJp3faafhtCPcOJFUx6l/FBCbQ=\"},\"from\":\"user:owner\",\"id\":\"wamid.input.1\",\"timestamp\":\"1789426424\",\"type\":\"document\"}",
+        "state": "completed",
+        "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b",
+        "envelope": "{\"attachment\":{\"caption\":\"\",\"coverage\":\"all pages; previews plus extractable text, no OCR claim\",\"extracted_text\":\"[page 1]\\nTotal: 100\",\"filename\":\"anexo.pdf\",\"frames\":[{\"height\":400,\"page\":1,\"path\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-tr4edeo4/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/page-1/payload.jpg\",\"width\":400}],\"kind\":\"document\",\"mime\":\"application/pdf\",\"pages\":1,\"path\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-tr4edeo4/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.pdf\",\"sha256\":\"1fde693cf14393d28f1d437011c269ddf69a7e1b423dc389154c7a97f14109b4\",\"transcript\":null,\"voice\":false},\"config\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-tr4edeo4/home/config/whatsapp.json\",\"home\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-tr4edeo4/home\",\"request\":\"wa-cd9a792e6ec32fed0c1fa60513878024\",\"schema\":\"fm-whatsapp-input.v1\",\"text\":\"Documento recebido.\\n\\n[page 1]\\nTotal: 100\"}",
+        "received": 1789426422.8719301
+      },
+      "persisted_outbox_after_simulated_receipt": [
+        {
+          "seq": 1,
+          "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+          "part": 0,
+          "state": "delivered",
+          "wamid": "wamid.simulated.1",
+          "attempts": 1
+        },
+        {
+          "seq": 2,
+          "event": "event-1789426423345545000",
+          "part": 0,
+          "state": "delivered",
+          "wamid": "wamid.simulated.2",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "modality": "voice",
+      "claim": {
+        "attachment": {
+          "caption": "",
+          "duration_seconds": 1.0065,
+          "extracted_text": null,
+          "filename": "anexo.ogg",
+          "frames": [],
+          "has_audio": true,
+          "kind": "audio",
+          "mime": "audio/ogg",
+          "path": "/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-t40aobgx/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.ogg",
+          "speech_detected": true,
+          "transcript": "Conte 37 mais 5",
+          "voice": true
+        },
+        "decisions": [],
+        "fresh_claim": true,
+        "history": [
+          {
+            "body": "Nota de voz recebida.\n\nConte 37 mais 5",
+            "kind": "audio",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "state": "claimed"
+          }
+        ],
+        "input_scope": "interpret_attachment",
+        "related_request": null,
+        "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+        "responses": [
+          {
+            "actor": "bridge",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "kind": "received",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+          }
+        ],
+        "schema": "fm-whatsapp-context.v1",
+        "state": "claimed",
+        "tasks": [],
+        "text": "Nota de voz recebida.\n\nConte 37 mais 5"
+      },
+      "computed_text_reply": "37 + 5 = 42.",
+      "emit_result": {
+        "decision": null,
+        "event": "event-1789426423965630000",
+        "new_event": true
+      },
+      "simulated_sends": [
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        },
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "37 + 5 = 42.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        }
+      ],
+      "persisted_request": {
+        "wamid": "wamid.input.1",
+        "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+        "sender": "user:owner",
+        "stamp": 1789426425,
+        "kind": "audio",
+        "body": "Nota de voz recebida.\n\nConte 37 mais 5",
+        "raw": "{\"audio\":{\"id\":\"voice-evidence\",\"mime_type\":\"audio/ogg\",\"sha256\":\"QcMngItBuGOmGeE+V3lA6lylMj9Ar4leglBdGCSwHAI=\",\"voice\":true},\"from\":\"user:owner\",\"id\":\"wamid.input.1\",\"timestamp\":\"1789426425\",\"type\":\"audio\"}",
+        "state": "completed",
+        "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b",
+        "envelope": "{\"attachment\":{\"caption\":\"\",\"duration_seconds\":1.0065,\"extracted_text\":null,\"filename\":\"anexo.ogg\",\"frames\":[],\"has_audio\":true,\"kind\":\"audio\",\"mime\":\"audio/ogg\",\"path\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-t40aobgx/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.ogg\",\"sha256\":\"41c327808b41b863a619e13e577940ea5ca5323f40af895e82505d1824b01c02\",\"speech_detected\":true,\"transcript\":\"Conte 37 mais 5\",\"voice\":true},\"config\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-t40aobgx/home/config/whatsapp.json\",\"home\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-t40aobgx/home\",\"request\":\"wa-cd9a792e6ec32fed0c1fa60513878024\",\"schema\":\"fm-whatsapp-input.v1\",\"text\":\"Nota de voz recebida.\\n\\nConte 37 mais 5\"}",
+        "received": 1789426423.4645991
+      },
+      "persisted_outbox_after_simulated_receipt": [
+        {
+          "seq": 1,
+          "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+          "part": 0,
+          "state": "delivered",
+          "wamid": "wamid.simulated.1",
+          "attempts": 1
+        },
+        {
+          "seq": 2,
+          "event": "event-1789426423965630000",
+          "part": 0,
+          "state": "delivered",
+          "wamid": "wamid.simulated.2",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "modality": "silent-video",
+      "claim": {
+        "attachment": {
+          "caption": "Descreva a cor",
+          "coverage": "uniform sampled frames; activity between samples may be missed",
+          "duration_seconds": 2.0,
+          "extracted_text": null,
+          "filename": "anexo.mp4",
+          "frames": [
+            {
+              "path": "/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-huedteyq/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/frame-01/payload.jpg",
+              "timestamp_seconds": 0.0
+            },
+            {
+              "path": "/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-huedteyq/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/frame-02/payload.jpg",
+              "timestamp_seconds": 1.0
+            }
+          ],
+          "has_audio": true,
+          "kind": "video",
+          "mime": "video/mp4",
+          "path": "/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-huedteyq/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.mp4",
+          "speech_detected": false,
+          "transcript": "",
+          "voice": false
+        },
+        "decisions": [],
+        "fresh_claim": true,
+        "history": [
+          {
+            "body": "Descreva a cor",
+            "kind": "video",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "state": "claimed"
+          }
+        ],
+        "input_scope": "interpret_attachment",
+        "related_request": null,
+        "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+        "responses": [
+          {
+            "actor": "bridge",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "kind": "received",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+          }
+        ],
+        "schema": "fm-whatsapp-context.v1",
+        "state": "claimed",
+        "tasks": [],
+        "text": "Descreva a cor"
+      },
+      "computed_text_reply": "Os quadros amostrados mostram vermelho; nenhuma fala foi detectada pelo transcritor de fixture.",
+      "emit_result": {
+        "decision": null,
+        "event": "event-1789426424660382000",
+        "new_event": true
+      },
+      "simulated_sends": [
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        },
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Os quadros amostrados mostram vermelho; nenhuma fala foi detectada pelo transcritor de fixture.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        }
+      ],
+      "persisted_request": {
+        "wamid": "wamid.input.1",
+        "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+        "sender": "user:owner",
+        "stamp": 1789426426,
+        "kind": "video",
+        "body": "Descreva a cor",
+        "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.1\",\"timestamp\":\"1789426426\",\"type\":\"video\",\"video\":{\"caption\":\"Descreva a cor\",\"id\":\"video-evidence\",\"mime_type\":\"video/mp4\",\"sha256\":\"0VqI7RJYBhwDNDVX+CLQQIcJuPneRd1u+U3T02keBKc=\"}}",
+        "state": "completed",
+        "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b",
+        "envelope": "{\"attachment\":{\"caption\":\"Descreva a cor\",\"coverage\":\"uniform sampled frames; activity between samples may be missed\",\"duration_seconds\":2.0,\"extracted_text\":null,\"filename\":\"anexo.mp4\",\"frames\":[{\"path\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-huedteyq/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/frame-01/payload.jpg\",\"timestamp_seconds\":0.0},{\"path\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-huedteyq/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/frame-02/payload.jpg\",\"timestamp_seconds\":1.0}],\"has_audio\":true,\"kind\":\"video\",\"mime\":\"video/mp4\",\"path\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-huedteyq/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.mp4\",\"sha256\":\"d15a88ed1258061c03343557f822d0408709b8f9de45dd6ef94dd3d3691e04a7\",\"speech_detected\":false,\"transcript\":\"\",\"voice\":false},\"config\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-huedteyq/home/config/whatsapp.json\",\"home\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-huedteyq/home\",\"request\":\"wa-cd9a792e6ec32fed0c1fa60513878024\",\"schema\":\"fm-whatsapp-input.v1\",\"text\":\"Descreva a cor\"}",
+        "received": 1789426424.08637
+      },
+      "persisted_outbox_after_simulated_receipt": [
+        {
+          "seq": 1,
+          "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+          "part": 0,
+          "state": "delivered",
+          "wamid": "wamid.simulated.1",
+          "attempts": 1
+        },
+        {
+          "seq": 2,
+          "event": "event-1789426424660382000",
+          "part": 0,
+          "state": "delivered",
+          "wamid": "wamid.simulated.2",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "modality": "txt",
+      "claim": {
+        "attachment": {
+          "caption": "",
+          "coverage": "complete UTF-8 text",
+          "extracted_text": "Total: 100",
+          "filename": "anexo.txt",
+          "frames": [],
+          "kind": "document",
+          "mime": "text/plain",
+          "path": "/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-6kh10pjj/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.txt",
+          "transcript": null,
+          "voice": false
+        },
+        "decisions": [],
+        "fresh_claim": true,
+        "history": [
+          {
+            "body": "Documento recebido.\n\nTotal: 100",
+            "kind": "document",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "state": "claimed"
+          }
+        ],
+        "input_scope": "interpret_attachment",
+        "related_request": null,
+        "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+        "responses": [
+          {
+            "actor": "bridge",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "kind": "received",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+          }
+        ],
+        "schema": "fm-whatsapp-context.v1",
+        "state": "claimed",
+        "tasks": [],
+        "text": "Documento recebido.\n\nTotal: 100"
+      },
+      "computed_text_reply": "O total informado no arquivo é 100.",
+      "emit_result": {
+        "decision": null,
+        "event": "event-1789426425114248000",
+        "new_event": true
+      },
+      "simulated_sends": [
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        },
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "O total informado no arquivo é 100.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        }
+      ],
+      "persisted_request": {
+        "wamid": "wamid.input.1",
+        "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+        "sender": "user:owner",
+        "stamp": 1789426426,
+        "kind": "document",
+        "body": "Documento recebido.\n\nTotal: 100",
+        "raw": "{\"document\":{\"id\":\"media-1789426424804002000\",\"mime_type\":\"text/plain\",\"sha256\":\"/X7gu5QltjvAD8CByIT42UJOWTi7IDNhkv4TcjU77UE=\"},\"from\":\"user:owner\",\"id\":\"wamid.input.1\",\"timestamp\":\"1789426426\",\"type\":\"document\"}",
+        "state": "completed",
+        "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b",
+        "envelope": "{\"attachment\":{\"caption\":\"\",\"coverage\":\"complete UTF-8 text\",\"extracted_text\":\"Total: 100\",\"filename\":\"anexo.txt\",\"frames\":[],\"kind\":\"document\",\"mime\":\"text/plain\",\"path\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-6kh10pjj/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.txt\",\"sha256\":\"fd7ee0bb9425b63bc00fc081c884f8d9424e5938bb20336192fe1372353bed41\",\"transcript\":null,\"voice\":false},\"config\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-6kh10pjj/home/config/whatsapp.json\",\"home\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-6kh10pjj/home\",\"request\":\"wa-cd9a792e6ec32fed0c1fa60513878024\",\"schema\":\"fm-whatsapp-input.v1\",\"text\":\"Documento recebido.\\n\\nTotal: 100\"}",
+        "received": 1789426424.780695
+      },
+      "persisted_outbox_after_simulated_receipt": [
+        {
+          "seq": 1,
+          "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+          "part": 0,
+          "state": "delivered",
+          "wamid": "wamid.simulated.1",
+          "attempts": 1
+        },
+        {
+          "seq": 2,
+          "event": "event-1789426425114248000",
+          "part": 0,
+          "state": "delivered",
+          "wamid": "wamid.simulated.2",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "modality": "docx",
+      "claim": {
+        "attachment": {
+          "caption": "",
+          "coverage": "Office text and cached cell values only; no macros, formulas, embedded media or layout",
+          "extracted_text": "[word/document.xml]\nTotal: 100\nTotal: 100\nTotal: 100",
+          "filename": "anexo.docx",
+          "frames": [],
+          "kind": "document",
+          "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "path": "/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-5lv4b685/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.docx",
+          "transcript": null,
+          "voice": false
+        },
+        "decisions": [],
+        "fresh_claim": true,
+        "history": [
+          {
+            "body": "Documento recebido.\n\n[word/document.xml]\nTotal: 100\nTotal: 100\nTotal: 100",
+            "kind": "document",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "state": "claimed"
+          }
+        ],
+        "input_scope": "interpret_attachment",
+        "related_request": null,
+        "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+        "responses": [
+          {
+            "actor": "bridge",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "kind": "received",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+          }
+        ],
+        "schema": "fm-whatsapp-context.v1",
+        "state": "claimed",
+        "tasks": [],
+        "text": "Documento recebido.\n\n[word/document.xml]\nTotal: 100\nTotal: 100\nTotal: 100"
+      },
+      "computed_text_reply": "O documento contém 3 valores Total: 100; soma 300. A representação alternativa da caixa não foi contada novamente.",
+      "emit_result": {
+        "decision": null,
+        "event": "event-1789426425615574000",
+        "new_event": true
+      },
+      "simulated_sends": [
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        },
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "O documento contém 3 valores Total: 100; soma 300. A representação alternativa da caixa não foi contada novamente.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        }
+      ],
+      "persisted_request": {
+        "wamid": "wamid.input.1",
+        "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+        "sender": "user:owner",
+        "stamp": 1789426427,
+        "kind": "document",
+        "body": "Documento recebido.\n\n[word/document.xml]\nTotal: 100\nTotal: 100\nTotal: 100",
+        "raw": "{\"document\":{\"id\":\"media-1789426425257786000\",\"mime_type\":\"application/vnd.openxmlformats-officedocument.wordprocessingml.document\",\"sha256\":\"Vbnp27GUefDVrf9ArxaQXp211rrn7xHJ58hp0KEmkmY=\"},\"from\":\"user:owner\",\"id\":\"wamid.input.1\",\"timestamp\":\"1789426427\",\"type\":\"document\"}",
+        "state": "completed",
+        "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b",
+        "envelope": "{\"attachment\":{\"caption\":\"\",\"coverage\":\"Office text and cached cell values only; no macros, formulas, embedded media or layout\",\"extracted_text\":\"[word/document.xml]\\nTotal: 100\\nTotal: 100\\nTotal: 100\",\"filename\":\"anexo.docx\",\"frames\":[],\"kind\":\"document\",\"mime\":\"application/vnd.openxmlformats-officedocument.wordprocessingml.document\",\"path\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-5lv4b685/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.docx\",\"sha256\":\"55b9e9dbb19479f0d5adff40af16905e9db5d6bae7ef11c9e7c869d0a1269266\",\"transcript\":null,\"voice\":false},\"config\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-5lv4b685/home/config/whatsapp.json\",\"home\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-5lv4b685/home\",\"request\":\"wa-cd9a792e6ec32fed0c1fa60513878024\",\"schema\":\"fm-whatsapp-input.v1\",\"text\":\"Documento recebido.\\n\\n[word/document.xml]\\nTotal: 100\\nTotal: 100\\nTotal: 100\"}",
+        "received": 1789426425.233846
+      },
+      "persisted_outbox_after_simulated_receipt": [
+        {
+          "seq": 1,
+          "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+          "part": 0,
+          "state": "delivered",
+          "wamid": "wamid.simulated.1",
+          "attempts": 1
+        },
+        {
+          "seq": 2,
+          "event": "event-1789426425615574000",
+          "part": 0,
+          "state": "delivered",
+          "wamid": "wamid.simulated.2",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "modality": "xlsx",
+      "claim": {
+        "attachment": {
+          "caption": "",
+          "coverage": "Office text and cached cell values only; no macros, formulas, embedded media or layout",
+          "extracted_text": "[sheet 1: Receita (xl/worksheets/sheet2.xml)]\nA1: 200\n\n[sheet 2: Despesa (xl/worksheets/sheet1.xml)]\nA1: 100",
+          "filename": "anexo.xlsx",
+          "frames": [],
+          "kind": "document",
+          "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "path": "/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-i9k6sme0/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.xlsx",
+          "transcript": null,
+          "voice": false
+        },
+        "decisions": [],
+        "fresh_claim": true,
+        "history": [
+          {
+            "body": "Documento recebido.\n\n[sheet 1: Receita (xl/worksheets/sheet2.xml)]\nA1: 200\n\n[sheet 2: Despesa (xl/worksheets/sheet1.xml)]\nA1: 100",
+            "kind": "document",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "state": "claimed"
+          }
+        ],
+        "input_scope": "interpret_attachment",
+        "related_request": null,
+        "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+        "responses": [
+          {
+            "actor": "bridge",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "kind": "received",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+          }
+        ],
+        "schema": "fm-whatsapp-context.v1",
+        "state": "claimed",
+        "tasks": [],
+        "text": "Documento recebido.\n\n[sheet 1: Receita (xl/worksheets/sheet2.xml)]\nA1: 200\n\n[sheet 2: Despesa (xl/worksheets/sheet1.xml)]\nA1: 100"
+      },
+      "computed_text_reply": "Ordem das abas: Receita (A1: 200), Despesa (A1: 100). Diferença: 100.",
+      "emit_result": {
+        "decision": null,
+        "event": "event-1789426426118686000",
+        "new_event": true
+      },
+      "simulated_sends": [
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        },
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Ordem das abas: Receita (A1: 200), Despesa (A1: 100). Diferença: 100.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        }
+      ],
+      "persisted_request": {
+        "wamid": "wamid.input.1",
+        "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+        "sender": "user:owner",
+        "stamp": 1789426427,
+        "kind": "document",
+        "body": "Documento recebido.\n\n[sheet 1: Receita (xl/worksheets/sheet2.xml)]\nA1: 200\n\n[sheet 2: Despesa (xl/worksheets/sheet1.xml)]\nA1: 100",
+        "raw": "{\"document\":{\"id\":\"media-1789426425758141000\",\"mime_type\":\"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\",\"sha256\":\"ELkwqlYIVLz5UlSRGdhyzVD68ksbp9hLt2olq7A6ZT4=\"},\"from\":\"user:owner\",\"id\":\"wamid.input.1\",\"timestamp\":\"1789426427\",\"type\":\"document\"}",
+        "state": "completed",
+        "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b",
+        "envelope": "{\"attachment\":{\"caption\":\"\",\"coverage\":\"Office text and cached cell values only; no macros, formulas, embedded media or layout\",\"extracted_text\":\"[sheet 1: Receita (xl/worksheets/sheet2.xml)]\\nA1: 200\\n\\n[sheet 2: Despesa (xl/worksheets/sheet1.xml)]\\nA1: 100\",\"filename\":\"anexo.xlsx\",\"frames\":[],\"kind\":\"document\",\"mime\":\"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\",\"path\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-i9k6sme0/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.xlsx\",\"sha256\":\"10b930aa560854bcf952549119d872cd50faf24b1ba7d84bb76a25abb03a653e\",\"transcript\":null,\"voice\":false},\"config\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-i9k6sme0/home/config/whatsapp.json\",\"home\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-i9k6sme0/home\",\"request\":\"wa-cd9a792e6ec32fed0c1fa60513878024\",\"schema\":\"fm-whatsapp-input.v1\",\"text\":\"Documento recebido.\\n\\n[sheet 1: Receita (xl/worksheets/sheet2.xml)]\\nA1: 200\\n\\n[sheet 2: Despesa (xl/worksheets/sheet1.xml)]\\nA1: 100\"}",
+        "received": 1789426425.734556
+      },
+      "persisted_outbox_after_simulated_receipt": [
+        {
+          "seq": 1,
+          "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+          "part": 0,
+          "state": "delivered",
+          "wamid": "wamid.simulated.1",
+          "attempts": 1
+        },
+        {
+          "seq": 2,
+          "event": "event-1789426426118686000",
+          "part": 0,
+          "state": "delivered",
+          "wamid": "wamid.simulated.2",
+          "attempts": 1
+        }
+      ]
+    },
+    {
+      "modality": "pptx",
+      "claim": {
+        "attachment": {
+          "caption": "",
+          "coverage": "Office text and cached cell values only; no macros, formulas, embedded media or layout",
+          "extracted_text": "[slide 1: ppt/slides/slide10.xml]\nSlide 10\n\n[slide 2: ppt/slides/slide2.xml]\nSlide 2\n\n[slide 3: ppt/slides/slide1.xml]\nSlide 1",
+          "filename": "anexo.pptx",
+          "frames": [],
+          "kind": "document",
+          "mime": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+          "path": "/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-iz0uzrow/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.pptx",
+          "transcript": null,
+          "voice": false
+        },
+        "decisions": [],
+        "fresh_claim": true,
+        "history": [
+          {
+            "body": "Documento recebido.\n\n[slide 1: ppt/slides/slide10.xml]\nSlide 10\n\n[slide 2: ppt/slides/slide2.xml]\nSlide 2\n\n[slide 3: ppt/slides/slide1.xml]\nSlide 1",
+            "kind": "document",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "state": "claimed"
+          }
+        ],
+        "input_scope": "interpret_attachment",
+        "related_request": null,
+        "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+        "responses": [
+          {
+            "actor": "bridge",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "kind": "received",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+          }
+        ],
+        "schema": "fm-whatsapp-context.v1",
+        "state": "claimed",
+        "tasks": [],
+        "text": "Documento recebido.\n\n[slide 1: ppt/slides/slide10.xml]\nSlide 10\n\n[slide 2: ppt/slides/slide2.xml]\nSlide 2\n\n[slide 3: ppt/slides/slide1.xml]\nSlide 1"
+      },
+      "computed_text_reply": "A sequência da apresentação é Slide 10, Slide 2, Slide 1.",
+      "emit_result": {
+        "decision": null,
+        "event": "event-1789426426622100000",
+        "new_event": true
+      },
+      "simulated_sends": [
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        },
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "A sequência da apresentação é Slide 10, Slide 2, Slide 1.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        }
+      ],
+      "persisted_request": {
+        "wamid": "wamid.input.1",
+        "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+        "sender": "user:owner",
+        "stamp": 1789426428,
+        "kind": "document",
+        "body": "Documento recebido.\n\n[slide 1: ppt/slides/slide10.xml]\nSlide 10\n\n[slide 2: ppt/slides/slide2.xml]\nSlide 2\n\n[slide 3: ppt/slides/slide1.xml]\nSlide 1",
+        "raw": "{\"document\":{\"id\":\"media-1789426426260847000\",\"mime_type\":\"application/vnd.openxmlformats-officedocument.presentationml.presentation\",\"sha256\":\"+6bPTLo+/U6oBOBacPSXB+Z5IqFa0lpU58d/A6AH1ZE=\"},\"from\":\"user:owner\",\"id\":\"wamid.input.1\",\"timestamp\":\"1789426428\",\"type\":\"document\"}",
+        "state": "completed",
+        "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b",
+        "envelope": "{\"attachment\":{\"caption\":\"\",\"coverage\":\"Office text and cached cell values only; no macros, formulas, embedded media or layout\",\"extracted_text\":\"[slide 1: ppt/slides/slide10.xml]\\nSlide 10\\n\\n[slide 2: ppt/slides/slide2.xml]\\nSlide 2\\n\\n[slide 3: ppt/slides/slide1.xml]\\nSlide 1\",\"filename\":\"anexo.pptx\",\"frames\":[],\"kind\":\"document\",\"mime\":\"application/vnd.openxmlformats-officedocument.presentationml.presentation\",\"path\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-iz0uzrow/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.pptx\",\"sha256\":\"fba6cf4cba3efd4ea804e05a70f49707e67922a15ad25a54e7c77f03a007d591\",\"transcript\":null,\"voice\":false},\"config\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-iz0uzrow/home/config/whatsapp.json\",\"home\":\"/Users/rodrigocampos/.no-mistakes/worktrees/0e94e7c89440/01M2GZ3SQNGTN7JC2YRYZ1BEFN/.wa-test-scratch/fm-whatsapp-test-iz0uzrow/home\",\"request\":\"wa-cd9a792e6ec32fed0c1fa60513878024\",\"schema\":\"fm-whatsapp-input.v1\",\"text\":\"Documento recebido.\\n\\n[slide 1: ppt/slides/slide10.xml]\\nSlide 10\\n\\n[slide 2: ppt/slides/slide2.xml]\\nSlide 2\\n\\n[slide 3: ppt/slides/slide1.xml]\\nSlide 1\"}",
+        "received": 1789426426.237553
+      },
+      "persisted_outbox_after_simulated_receipt": [
+        {
+          "seq": 1,
+          "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+          "part": 0,
+          "state": "delivered",
+          "wamid": "wamid.simulated.1",
+          "attempts": 1
+        },
+        {
+          "seq": 2,
+          "event": "event-1789426426622100000",
+          "part": 0,
+          "state": "delivered",
+          "wamid": "wamid.simulated.2",
+          "attempts": 1
+        }
+      ]
+    }
+  ]
+}
