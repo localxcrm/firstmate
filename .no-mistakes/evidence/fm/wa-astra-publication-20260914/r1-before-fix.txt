@@ -1,0 +1,85 @@
+Pre-R1 bridge (684c61bc), target behavioral regression:
+test_expired_pending_decision_preserves_conversational_confirmations (fm_whatsapp_test.WhatsAppTests.test_expired_pending_decision_preserves_conversational_confirmations) ... 
+  test_expired_pending_decision_preserves_conversational_confirmations (fm_whatsapp_test.WhatsAppTests.test_expired_pending_decision_preserves_conversational_confirmations) (text='sim') ... FAIL
+  test_expired_pending_decision_preserves_conversational_confirmations (fm_whatsapp_test.WhatsAppTests.test_expired_pending_decision_preserves_conversational_confirmations) (text='ok') ... FAIL
+  test_expired_pending_decision_preserves_conversational_confirmations (fm_whatsapp_test.WhatsAppTests.test_expired_pending_decision_preserves_conversational_confirmations) (text='aprovo') ... FAIL
+  test_expired_pending_decision_preserves_conversational_confirmations (fm_whatsapp_test.WhatsAppTests.test_expired_pending_decision_preserves_conversational_confirmations) (text='pode') ... FAIL
+  test_expired_pending_decision_preserves_conversational_confirmations (fm_whatsapp_test.WhatsAppTests.test_expired_pending_decision_preserves_conversational_confirmations) (text='👍') ... FAIL
+  test_expired_pending_decision_preserves_conversational_confirmations (fm_whatsapp_test.WhatsAppTests.test_expired_pending_decision_preserves_conversational_confirmations) (text='✅') ... FAIL
+
+======================================================================
+FAIL: test_expired_pending_decision_preserves_conversational_confirmations (fm_whatsapp_test.WhatsAppTests.test_expired_pending_decision_preserves_conversational_confirmations) (text='sim')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/tests/fm_whatsapp_test.py", line 658, in test_expired_pending_decision_preserves_conversational_confirmations
+    self.assertEqual(answer["state"], "received")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'answered' != 'received'
+- answered
++ received
+
+
+======================================================================
+FAIL: test_expired_pending_decision_preserves_conversational_confirmations (fm_whatsapp_test.WhatsAppTests.test_expired_pending_decision_preserves_conversational_confirmations) (text='ok')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/tests/fm_whatsapp_test.py", line 658, in test_expired_pending_decision_preserves_conversational_confirmations
+    self.assertEqual(answer["state"], "received")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'answered' != 'received'
+- answered
++ received
+
+
+======================================================================
+FAIL: test_expired_pending_decision_preserves_conversational_confirmations (fm_whatsapp_test.WhatsAppTests.test_expired_pending_decision_preserves_conversational_confirmations) (text='aprovo')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/tests/fm_whatsapp_test.py", line 658, in test_expired_pending_decision_preserves_conversational_confirmations
+    self.assertEqual(answer["state"], "received")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'answered' != 'received'
+- answered
++ received
+
+
+======================================================================
+FAIL: test_expired_pending_decision_preserves_conversational_confirmations (fm_whatsapp_test.WhatsAppTests.test_expired_pending_decision_preserves_conversational_confirmations) (text='pode')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/tests/fm_whatsapp_test.py", line 658, in test_expired_pending_decision_preserves_conversational_confirmations
+    self.assertEqual(answer["state"], "received")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'answered' != 'received'
+- answered
++ received
+
+
+======================================================================
+FAIL: test_expired_pending_decision_preserves_conversational_confirmations (fm_whatsapp_test.WhatsAppTests.test_expired_pending_decision_preserves_conversational_confirmations) (text='👍')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/tests/fm_whatsapp_test.py", line 658, in test_expired_pending_decision_preserves_conversational_confirmations
+    self.assertEqual(answer["state"], "received")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'answered' != 'received'
+- answered
++ received
+
+
+======================================================================
+FAIL: test_expired_pending_decision_preserves_conversational_confirmations (fm_whatsapp_test.WhatsAppTests.test_expired_pending_decision_preserves_conversational_confirmations) (text='✅')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/tests/fm_whatsapp_test.py", line 658, in test_expired_pending_decision_preserves_conversational_confirmations
+    self.assertEqual(answer["state"], "received")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'answered' != 'received'
+- answered
++ received
+
+
+----------------------------------------------------------------------
+Ran 1 test in 1.748s
+
+FAILED (failures=6)

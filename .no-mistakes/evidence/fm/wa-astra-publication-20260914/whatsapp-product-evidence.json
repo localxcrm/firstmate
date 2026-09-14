@@ -1,0 +1,2461 @@
+{
+  "scope": "Local text bridge only. Real inbox, authenticated CLI and SQLite; simulated WhatsApp transport and structural harness. No model, account, production service or attachments activated.",
+  "revision": "36e2d4dad6b19c4c6a83781204a5f96ea913a2e7",
+  "runs": [
+    {
+      "scenario": "test_real_inbox_main_result_and_delivery",
+      "events": [
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": {
+            "id": "wamid.input.1",
+            "from": "user:owner",
+            "timestamp": "1789418185",
+            "type": "text",
+            "text": {
+              "body": "Conte as linhas do arquivo local"
+            }
+          },
+          "persisted_request": {
+            "wamid": "wamid.input.1",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "sender": "user:owner",
+            "stamp": 1789418185,
+            "kind": "text",
+            "body": "Conte as linhas do arquivo local",
+            "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.1\",\"text\":{\"body\":\"Conte as linhas do arquivo local\"},\"timestamp\":\"1789418185\",\"type\":\"text\"}",
+            "state": "received",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418183.390849
+          }
+        },
+        {
+          "interface": "authenticated main CLI",
+          "operation": {
+            "op": "claim",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b"
+          },
+          "response": {
+            "decisions": [],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "Conte as linhas do arquivo local",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "claimed"
+              }
+            ],
+            "related_request": null,
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [],
+            "text": "Conte as linhas do arquivo local"
+          }
+        },
+        {
+          "interface": "authenticated main CLI",
+          "operation": {
+            "op": "emit",
+            "event": "event-1789418183769331000",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "started",
+            "body": "Análise iniciada",
+            "task": {
+              "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-7q_oip02/home",
+              "id": "analysis",
+              "revision": "v1"
+            }
+          },
+          "response": {
+            "decision": null,
+            "event": "event-1789418183769331000",
+            "new_event": true
+          }
+        },
+        {
+          "interface": "authenticated main CLI",
+          "operation": {
+            "op": "emit",
+            "event": "event-1789418183899216000",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "completed",
+            "body": "O arquivo tem 3 linhas.",
+            "evidence": [
+              "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-7q_oip02/sample.txt"
+            ],
+            "task": {
+              "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-7q_oip02/home",
+              "id": "analysis",
+              "revision": "v1"
+            }
+          },
+          "response": {
+            "decision": null,
+            "event": "event-1789418183899216000",
+            "new_event": true
+          }
+        }
+      ],
+      "outgoing_simulated_messages": [
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        },
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Análise iniciada",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        },
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "O arquivo tem 3 linhas.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        }
+      ],
+      "persisted_state": {
+        "schema": "fm-whatsapp-status.v1",
+        "cursor": 1,
+        "halt": null,
+        "supervision": "checkpoint",
+        "poll_diagnostic": null,
+        "requests": [
+          {
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "state": "completed",
+            "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b"
+          }
+        ],
+        "responses": [
+          {
+            "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "received",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "at": 1789418183.390849
+          },
+          {
+            "event": "event-1789418183769331000",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "started",
+            "body": "Análise iniciada",
+            "at": 1789418183.892427
+          },
+          {
+            "event": "event-1789418183899216000",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "completed",
+            "body": "O arquivo tem 3 linhas.",
+            "at": 1789418184.022069
+          }
+        ],
+        "outbox": [
+          {
+            "seq": 1,
+            "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+            "part": 0,
+            "state": "accepted",
+            "wamid": "wamid.simulated.1",
+            "attempts": 1
+          },
+          {
+            "seq": 2,
+            "event": "event-1789418183769331000",
+            "part": 0,
+            "state": "accepted",
+            "wamid": "wamid.simulated.2",
+            "attempts": 1
+          },
+          {
+            "seq": 3,
+            "event": "event-1789418183899216000",
+            "part": 0,
+            "state": "accepted",
+            "wamid": "wamid.simulated.3",
+            "attempts": 1
+          }
+        ]
+      },
+      "decisions": []
+    },
+    {
+      "scenario": "test_expired_pending_decision_preserves_conversational_confirmations",
+      "events": [
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": null,
+          "persisted_request": {
+            "wamid": "wamid.input.1",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "sender": "user:owner",
+            "stamp": 1789418186,
+            "kind": "text",
+            "body": "Analise o arquivo local",
+            "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.1\",\"text\":{\"body\":\"Analise o arquivo local\"},\"timestamp\":\"1789418186\",\"type\":\"text\"}",
+            "state": "received",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418184.042302
+          }
+        },
+        {
+          "interface": "authenticated main CLI",
+          "operation": {
+            "op": "claim",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b"
+          },
+          "response": {
+            "decisions": [],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "Analise o arquivo local",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "claimed"
+              }
+            ],
+            "related_request": null,
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [],
+            "text": "Analise o arquivo local"
+          }
+        },
+        {
+          "interface": "authenticated main CLI",
+          "operation": {
+            "op": "emit",
+            "event": "event-1789418184412948000",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "decision",
+            "body": "Autoriza a revisão?",
+            "task": {
+              "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-33x_e1b4/home",
+              "id": "analysis",
+              "revision": "v1"
+            },
+            "action": "revisar fixture",
+            "expires": 1789418485.412728
+          },
+          "response": {
+            "decision": "c2a87950e70cdfb4",
+            "event": "event-1789418184412948000",
+            "new_event": true
+          }
+        },
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": {
+            "id": "wamid.input.2",
+            "from": "user:owner",
+            "timestamp": "1789418487",
+            "type": "text",
+            "text": {
+              "body": "sim"
+            }
+          },
+          "persisted_request": {
+            "wamid": "wamid.input.2",
+            "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+            "sender": "user:owner",
+            "stamp": 1789418487,
+            "kind": "text",
+            "body": "sim",
+            "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.2\",\"text\":{\"body\":\"sim\"},\"timestamp\":\"1789418487\",\"type\":\"text\"}",
+            "state": "answered",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418485.412728
+          }
+        },
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": {
+            "id": "wamid.input.3",
+            "from": "user:owner",
+            "timestamp": "1789418488",
+            "type": "text",
+            "text": {
+              "body": "Explique o resultado"
+            }
+          },
+          "persisted_request": {
+            "wamid": "wamid.input.3",
+            "request": "wa-717cc97c97354679b1b6381141f16f19",
+            "sender": "user:owner",
+            "stamp": 1789418488,
+            "kind": "text",
+            "body": "Explique o resultado",
+            "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.3\",\"text\":{\"body\":\"Explique o resultado\"},\"timestamp\":\"1789418488\",\"type\":\"text\"}",
+            "state": "received",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418486.412728
+          }
+        },
+        {
+          "interface": "authenticated main CLI",
+          "operation": {
+            "op": "claim",
+            "request": "wa-717cc97c97354679b1b6381141f16f19",
+            "note_id": "key-d63fb0a641ace47bbc18dac98d40de7f48ea14d93964744757b6ab194ffa76dc"
+          },
+          "response": {
+            "decisions": [
+              {
+                "action": "revisar fixture",
+                "answer_wamid": null,
+                "expires": 1789418485.412728,
+                "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-33x_e1b4/home",
+                "id": "c2a87950e70cdfb4",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "revision": "v1",
+                "state": "pending",
+                "task": "analysis"
+              }
+            ],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "Explique o resultado",
+                "request": "wa-717cc97c97354679b1b6381141f16f19",
+                "state": "claimed"
+              },
+              {
+                "body": "sim",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+                "state": "answered"
+              },
+              {
+                "body": "Analise o arquivo local",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "decision"
+              }
+            ],
+            "related_request": null,
+            "request": "wa-717cc97c97354679b1b6381141f16f19",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-717cc97c97354679b1b6381141f16f19"
+              },
+              {
+                "actor": "bridge",
+                "body": "Nenhuma ação foi aprovada. Responda com o código da pergunta vigente: aprovar CÓDIGO. Uma confirmação genérica não escolhe entre tarefas.",
+                "kind": "notice",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb"
+              },
+              {
+                "actor": "64025",
+                "body": "Autoriza a revisão?\nAção: revisar fixture\nRevisão: v1\nPara autorizar esta ação, responda: aprovar c2a87950e70cdfb4",
+                "kind": "decision",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [
+              {
+                "fingerprint": "0a6494d18e78e8a2d4d2a76230d4d49a25f11f48ba6115f4e6b24d8530d60b8e",
+                "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-33x_e1b4/home",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "revision": "v1",
+                "task": "analysis"
+              }
+            ],
+            "text": "Explique o resultado"
+          }
+        },
+        {
+          "interface": "authenticated main CLI",
+          "operation": {
+            "op": "emit",
+            "event": "event-1789418184912310000",
+            "request": "wa-717cc97c97354679b1b6381141f16f19",
+            "kind": "reply",
+            "body": "Quer um resumo?"
+          },
+          "response": {
+            "decision": null,
+            "event": "event-1789418184912310000",
+            "new_event": true
+          }
+        },
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": {
+            "id": "wamid.input.4",
+            "from": "user:owner",
+            "timestamp": "1789418488",
+            "type": "text",
+            "text": {
+              "body": "sim"
+            }
+          },
+          "persisted_request": {
+            "wamid": "wamid.input.4",
+            "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+            "sender": "user:owner",
+            "stamp": 1789418488,
+            "kind": "text",
+            "body": "sim",
+            "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.4\",\"text\":{\"body\":\"sim\"},\"timestamp\":\"1789418488\",\"type\":\"text\"}",
+            "state": "received",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418486.412728
+          }
+        },
+        {
+          "interface": "authenticated main CLI",
+          "operation": {
+            "op": "claim",
+            "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+            "note_id": "key-f817819972d5de25085e550e728f6960e9988ef75e98cc0172fc24e642973feb"
+          },
+          "response": {
+            "decisions": [
+              {
+                "action": "revisar fixture",
+                "answer_wamid": null,
+                "expires": 1789418485.412728,
+                "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-33x_e1b4/home",
+                "id": "c2a87950e70cdfb4",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "revision": "v1",
+                "state": "pending",
+                "task": "analysis"
+              }
+            ],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "sim",
+                "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+                "state": "claimed"
+              },
+              {
+                "body": "Explique o resultado",
+                "request": "wa-717cc97c97354679b1b6381141f16f19",
+                "state": "answered"
+              },
+              {
+                "body": "sim",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+                "state": "answered"
+              },
+              {
+                "body": "Analise o arquivo local",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "decision"
+              }
+            ],
+            "related_request": null,
+            "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-daede0a38cc014d92f45c0972f4eb503"
+              },
+              {
+                "actor": "64025",
+                "body": "Quer um resumo?",
+                "kind": "reply",
+                "request": "wa-717cc97c97354679b1b6381141f16f19"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-717cc97c97354679b1b6381141f16f19"
+              },
+              {
+                "actor": "bridge",
+                "body": "Nenhuma ação foi aprovada. Responda com o código da pergunta vigente: aprovar CÓDIGO. Uma confirmação genérica não escolhe entre tarefas.",
+                "kind": "notice",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb"
+              },
+              {
+                "actor": "64025",
+                "body": "Autoriza a revisão?\nAção: revisar fixture\nRevisão: v1\nPara autorizar esta ação, responda: aprovar c2a87950e70cdfb4",
+                "kind": "decision",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [
+              {
+                "fingerprint": "0a6494d18e78e8a2d4d2a76230d4d49a25f11f48ba6115f4e6b24d8530d60b8e",
+                "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-33x_e1b4/home",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "revision": "v1",
+                "task": "analysis"
+              }
+            ],
+            "text": "sim"
+          }
+        },
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": {
+            "id": "wamid.input.5",
+            "from": "user:owner",
+            "timestamp": "1789418488",
+            "type": "text",
+            "text": {
+              "body": "ok"
+            }
+          },
+          "persisted_request": {
+            "wamid": "wamid.input.5",
+            "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e",
+            "sender": "user:owner",
+            "stamp": 1789418488,
+            "kind": "text",
+            "body": "ok",
+            "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.5\",\"text\":{\"body\":\"ok\"},\"timestamp\":\"1789418488\",\"type\":\"text\"}",
+            "state": "received",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418486.412728
+          }
+        },
+        {
+          "interface": "authenticated main CLI",
+          "operation": {
+            "op": "claim",
+            "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e",
+            "note_id": "key-3d8a5414836748bbf0b6581d3459661dd4ea08e33674a432965fbc35b323f5f9"
+          },
+          "response": {
+            "decisions": [
+              {
+                "action": "revisar fixture",
+                "answer_wamid": null,
+                "expires": 1789418485.412728,
+                "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-33x_e1b4/home",
+                "id": "c2a87950e70cdfb4",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "revision": "v1",
+                "state": "pending",
+                "task": "analysis"
+              }
+            ],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "ok",
+                "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e",
+                "state": "claimed"
+              },
+              {
+                "body": "sim",
+                "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+                "state": "claimed"
+              },
+              {
+                "body": "Explique o resultado",
+                "request": "wa-717cc97c97354679b1b6381141f16f19",
+                "state": "answered"
+              },
+              {
+                "body": "sim",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+                "state": "answered"
+              },
+              {
+                "body": "Analise o arquivo local",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "decision"
+              }
+            ],
+            "related_request": null,
+            "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-daede0a38cc014d92f45c0972f4eb503"
+              },
+              {
+                "actor": "64025",
+                "body": "Quer um resumo?",
+                "kind": "reply",
+                "request": "wa-717cc97c97354679b1b6381141f16f19"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-717cc97c97354679b1b6381141f16f19"
+              },
+              {
+                "actor": "bridge",
+                "body": "Nenhuma ação foi aprovada. Responda com o código da pergunta vigente: aprovar CÓDIGO. Uma confirmação genérica não escolhe entre tarefas.",
+                "kind": "notice",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb"
+              },
+              {
+                "actor": "64025",
+                "body": "Autoriza a revisão?\nAção: revisar fixture\nRevisão: v1\nPara autorizar esta ação, responda: aprovar c2a87950e70cdfb4",
+                "kind": "decision",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [
+              {
+                "fingerprint": "0a6494d18e78e8a2d4d2a76230d4d49a25f11f48ba6115f4e6b24d8530d60b8e",
+                "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-33x_e1b4/home",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "revision": "v1",
+                "task": "analysis"
+              }
+            ],
+            "text": "ok"
+          }
+        },
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": {
+            "id": "wamid.input.6",
+            "from": "user:owner",
+            "timestamp": "1789418488",
+            "type": "text",
+            "text": {
+              "body": "aprovo"
+            }
+          },
+          "persisted_request": {
+            "wamid": "wamid.input.6",
+            "request": "wa-a2ad52b15eb29c558328601b2e6922eb",
+            "sender": "user:owner",
+            "stamp": 1789418488,
+            "kind": "text",
+            "body": "aprovo",
+            "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.6\",\"text\":{\"body\":\"aprovo\"},\"timestamp\":\"1789418488\",\"type\":\"text\"}",
+            "state": "received",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418486.412728
+          }
+        },
+        {
+          "interface": "authenticated main CLI",
+          "operation": {
+            "op": "claim",
+            "request": "wa-a2ad52b15eb29c558328601b2e6922eb",
+            "note_id": "key-67cb5581909c314f52657ff820a4d72231d1453b09a2f764db2699665080a836"
+          },
+          "response": {
+            "decisions": [
+              {
+                "action": "revisar fixture",
+                "answer_wamid": null,
+                "expires": 1789418485.412728,
+                "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-33x_e1b4/home",
+                "id": "c2a87950e70cdfb4",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "revision": "v1",
+                "state": "pending",
+                "task": "analysis"
+              }
+            ],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "aprovo",
+                "request": "wa-a2ad52b15eb29c558328601b2e6922eb",
+                "state": "claimed"
+              },
+              {
+                "body": "ok",
+                "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e",
+                "state": "claimed"
+              },
+              {
+                "body": "sim",
+                "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+                "state": "claimed"
+              },
+              {
+                "body": "Explique o resultado",
+                "request": "wa-717cc97c97354679b1b6381141f16f19",
+                "state": "answered"
+              },
+              {
+                "body": "sim",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+                "state": "answered"
+              },
+              {
+                "body": "Analise o arquivo local",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "decision"
+              }
+            ],
+            "related_request": null,
+            "request": "wa-a2ad52b15eb29c558328601b2e6922eb",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-a2ad52b15eb29c558328601b2e6922eb"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-daede0a38cc014d92f45c0972f4eb503"
+              },
+              {
+                "actor": "64025",
+                "body": "Quer um resumo?",
+                "kind": "reply",
+                "request": "wa-717cc97c97354679b1b6381141f16f19"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-717cc97c97354679b1b6381141f16f19"
+              },
+              {
+                "actor": "bridge",
+                "body": "Nenhuma ação foi aprovada. Responda com o código da pergunta vigente: aprovar CÓDIGO. Uma confirmação genérica não escolhe entre tarefas.",
+                "kind": "notice",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb"
+              },
+              {
+                "actor": "64025",
+                "body": "Autoriza a revisão?\nAção: revisar fixture\nRevisão: v1\nPara autorizar esta ação, responda: aprovar c2a87950e70cdfb4",
+                "kind": "decision",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [
+              {
+                "fingerprint": "0a6494d18e78e8a2d4d2a76230d4d49a25f11f48ba6115f4e6b24d8530d60b8e",
+                "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-33x_e1b4/home",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "revision": "v1",
+                "task": "analysis"
+              }
+            ],
+            "text": "aprovo"
+          }
+        },
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": {
+            "id": "wamid.input.7",
+            "from": "user:owner",
+            "timestamp": "1789418488",
+            "type": "text",
+            "text": {
+              "body": "pode"
+            }
+          },
+          "persisted_request": {
+            "wamid": "wamid.input.7",
+            "request": "wa-92382d828dde19468f1a8dd75c790a1b",
+            "sender": "user:owner",
+            "stamp": 1789418488,
+            "kind": "text",
+            "body": "pode",
+            "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.7\",\"text\":{\"body\":\"pode\"},\"timestamp\":\"1789418488\",\"type\":\"text\"}",
+            "state": "received",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418486.412728
+          }
+        },
+        {
+          "interface": "authenticated main CLI",
+          "operation": {
+            "op": "claim",
+            "request": "wa-92382d828dde19468f1a8dd75c790a1b",
+            "note_id": "key-990f423ab397cb72ee794f7bdc1a8ad72c92bb4c39b143a96449b484d280a642"
+          },
+          "response": {
+            "decisions": [
+              {
+                "action": "revisar fixture",
+                "answer_wamid": null,
+                "expires": 1789418485.412728,
+                "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-33x_e1b4/home",
+                "id": "c2a87950e70cdfb4",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "revision": "v1",
+                "state": "pending",
+                "task": "analysis"
+              }
+            ],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "pode",
+                "request": "wa-92382d828dde19468f1a8dd75c790a1b",
+                "state": "claimed"
+              },
+              {
+                "body": "aprovo",
+                "request": "wa-a2ad52b15eb29c558328601b2e6922eb",
+                "state": "claimed"
+              },
+              {
+                "body": "ok",
+                "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e",
+                "state": "claimed"
+              },
+              {
+                "body": "sim",
+                "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+                "state": "claimed"
+              },
+              {
+                "body": "Explique o resultado",
+                "request": "wa-717cc97c97354679b1b6381141f16f19",
+                "state": "answered"
+              },
+              {
+                "body": "sim",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+                "state": "answered"
+              },
+              {
+                "body": "Analise o arquivo local",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "decision"
+              }
+            ],
+            "related_request": null,
+            "request": "wa-92382d828dde19468f1a8dd75c790a1b",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-92382d828dde19468f1a8dd75c790a1b"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-a2ad52b15eb29c558328601b2e6922eb"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-daede0a38cc014d92f45c0972f4eb503"
+              },
+              {
+                "actor": "64025",
+                "body": "Quer um resumo?",
+                "kind": "reply",
+                "request": "wa-717cc97c97354679b1b6381141f16f19"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-717cc97c97354679b1b6381141f16f19"
+              },
+              {
+                "actor": "bridge",
+                "body": "Nenhuma ação foi aprovada. Responda com o código da pergunta vigente: aprovar CÓDIGO. Uma confirmação genérica não escolhe entre tarefas.",
+                "kind": "notice",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb"
+              },
+              {
+                "actor": "64025",
+                "body": "Autoriza a revisão?\nAção: revisar fixture\nRevisão: v1\nPara autorizar esta ação, responda: aprovar c2a87950e70cdfb4",
+                "kind": "decision",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [
+              {
+                "fingerprint": "0a6494d18e78e8a2d4d2a76230d4d49a25f11f48ba6115f4e6b24d8530d60b8e",
+                "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-33x_e1b4/home",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "revision": "v1",
+                "task": "analysis"
+              }
+            ],
+            "text": "pode"
+          }
+        },
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": {
+            "id": "wamid.input.8",
+            "from": "user:owner",
+            "timestamp": "1789418488",
+            "type": "text",
+            "text": {
+              "body": "👍"
+            }
+          },
+          "persisted_request": {
+            "wamid": "wamid.input.8",
+            "request": "wa-310ac328131f030e9e0458c00fcb35ea",
+            "sender": "user:owner",
+            "stamp": 1789418488,
+            "kind": "text",
+            "body": "👍",
+            "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.8\",\"text\":{\"body\":\"👍\"},\"timestamp\":\"1789418488\",\"type\":\"text\"}",
+            "state": "received",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418486.412728
+          }
+        },
+        {
+          "interface": "authenticated main CLI",
+          "operation": {
+            "op": "claim",
+            "request": "wa-310ac328131f030e9e0458c00fcb35ea",
+            "note_id": "key-cd090944b1f93d8836959f34cac64a7f89bd196c56bf39ffb51d1ec0cedd8bf1"
+          },
+          "response": {
+            "decisions": [
+              {
+                "action": "revisar fixture",
+                "answer_wamid": null,
+                "expires": 1789418485.412728,
+                "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-33x_e1b4/home",
+                "id": "c2a87950e70cdfb4",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "revision": "v1",
+                "state": "pending",
+                "task": "analysis"
+              }
+            ],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "👍",
+                "request": "wa-310ac328131f030e9e0458c00fcb35ea",
+                "state": "claimed"
+              },
+              {
+                "body": "pode",
+                "request": "wa-92382d828dde19468f1a8dd75c790a1b",
+                "state": "claimed"
+              },
+              {
+                "body": "aprovo",
+                "request": "wa-a2ad52b15eb29c558328601b2e6922eb",
+                "state": "claimed"
+              },
+              {
+                "body": "ok",
+                "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e",
+                "state": "claimed"
+              },
+              {
+                "body": "sim",
+                "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+                "state": "claimed"
+              },
+              {
+                "body": "Explique o resultado",
+                "request": "wa-717cc97c97354679b1b6381141f16f19",
+                "state": "answered"
+              },
+              {
+                "body": "sim",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+                "state": "answered"
+              },
+              {
+                "body": "Analise o arquivo local",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "decision"
+              }
+            ],
+            "related_request": null,
+            "request": "wa-310ac328131f030e9e0458c00fcb35ea",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-310ac328131f030e9e0458c00fcb35ea"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-92382d828dde19468f1a8dd75c790a1b"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-a2ad52b15eb29c558328601b2e6922eb"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-daede0a38cc014d92f45c0972f4eb503"
+              },
+              {
+                "actor": "64025",
+                "body": "Quer um resumo?",
+                "kind": "reply",
+                "request": "wa-717cc97c97354679b1b6381141f16f19"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-717cc97c97354679b1b6381141f16f19"
+              },
+              {
+                "actor": "bridge",
+                "body": "Nenhuma ação foi aprovada. Responda com o código da pergunta vigente: aprovar CÓDIGO. Uma confirmação genérica não escolhe entre tarefas.",
+                "kind": "notice",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb"
+              },
+              {
+                "actor": "64025",
+                "body": "Autoriza a revisão?\nAção: revisar fixture\nRevisão: v1\nPara autorizar esta ação, responda: aprovar c2a87950e70cdfb4",
+                "kind": "decision",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [
+              {
+                "fingerprint": "0a6494d18e78e8a2d4d2a76230d4d49a25f11f48ba6115f4e6b24d8530d60b8e",
+                "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-33x_e1b4/home",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "revision": "v1",
+                "task": "analysis"
+              }
+            ],
+            "text": "👍"
+          }
+        },
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": {
+            "id": "wamid.input.9",
+            "from": "user:owner",
+            "timestamp": "1789418488",
+            "type": "text",
+            "text": {
+              "body": "✅"
+            }
+          },
+          "persisted_request": {
+            "wamid": "wamid.input.9",
+            "request": "wa-23568a0fc39ce0bdff579df17682a1f9",
+            "sender": "user:owner",
+            "stamp": 1789418488,
+            "kind": "text",
+            "body": "✅",
+            "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.9\",\"text\":{\"body\":\"✅\"},\"timestamp\":\"1789418488\",\"type\":\"text\"}",
+            "state": "received",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418486.412728
+          }
+        },
+        {
+          "interface": "authenticated main CLI",
+          "operation": {
+            "op": "claim",
+            "request": "wa-23568a0fc39ce0bdff579df17682a1f9",
+            "note_id": "key-4ead1589b51d731aa5365dda91a1d285935836a2f397652f7948b68bc5de0874"
+          },
+          "response": {
+            "decisions": [
+              {
+                "action": "revisar fixture",
+                "answer_wamid": null,
+                "expires": 1789418485.412728,
+                "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-33x_e1b4/home",
+                "id": "c2a87950e70cdfb4",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "revision": "v1",
+                "state": "pending",
+                "task": "analysis"
+              }
+            ],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "✅",
+                "request": "wa-23568a0fc39ce0bdff579df17682a1f9",
+                "state": "claimed"
+              },
+              {
+                "body": "👍",
+                "request": "wa-310ac328131f030e9e0458c00fcb35ea",
+                "state": "claimed"
+              },
+              {
+                "body": "pode",
+                "request": "wa-92382d828dde19468f1a8dd75c790a1b",
+                "state": "claimed"
+              },
+              {
+                "body": "aprovo",
+                "request": "wa-a2ad52b15eb29c558328601b2e6922eb",
+                "state": "claimed"
+              },
+              {
+                "body": "ok",
+                "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e",
+                "state": "claimed"
+              },
+              {
+                "body": "sim",
+                "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+                "state": "claimed"
+              },
+              {
+                "body": "Explique o resultado",
+                "request": "wa-717cc97c97354679b1b6381141f16f19",
+                "state": "answered"
+              },
+              {
+                "body": "sim",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+                "state": "answered"
+              },
+              {
+                "body": "Analise o arquivo local",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "decision"
+              }
+            ],
+            "related_request": null,
+            "request": "wa-23568a0fc39ce0bdff579df17682a1f9",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-23568a0fc39ce0bdff579df17682a1f9"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-310ac328131f030e9e0458c00fcb35ea"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-92382d828dde19468f1a8dd75c790a1b"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-a2ad52b15eb29c558328601b2e6922eb"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-daede0a38cc014d92f45c0972f4eb503"
+              },
+              {
+                "actor": "64025",
+                "body": "Quer um resumo?",
+                "kind": "reply",
+                "request": "wa-717cc97c97354679b1b6381141f16f19"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-717cc97c97354679b1b6381141f16f19"
+              },
+              {
+                "actor": "bridge",
+                "body": "Nenhuma ação foi aprovada. Responda com o código da pergunta vigente: aprovar CÓDIGO. Uma confirmação genérica não escolhe entre tarefas.",
+                "kind": "notice",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb"
+              },
+              {
+                "actor": "64025",
+                "body": "Autoriza a revisão?\nAção: revisar fixture\nRevisão: v1\nPara autorizar esta ação, responda: aprovar c2a87950e70cdfb4",
+                "kind": "decision",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [
+              {
+                "fingerprint": "0a6494d18e78e8a2d4d2a76230d4d49a25f11f48ba6115f4e6b24d8530d60b8e",
+                "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-33x_e1b4/home",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "revision": "v1",
+                "task": "analysis"
+              }
+            ],
+            "text": "✅"
+          }
+        },
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": {
+            "id": "wamid.input.10",
+            "from": "user:owner",
+            "timestamp": "1789418488",
+            "type": "text",
+            "text": {
+              "body": "aprovar c2a87950e70cdfb4"
+            }
+          },
+          "persisted_request": {
+            "wamid": "wamid.input.10",
+            "request": "wa-a87cee26cd3dd54a5da481043175c86f",
+            "sender": "user:owner",
+            "stamp": 1789418488,
+            "kind": "text",
+            "body": "aprovar c2a87950e70cdfb4",
+            "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.10\",\"text\":{\"body\":\"aprovar c2a87950e70cdfb4\"},\"timestamp\":\"1789418488\",\"type\":\"text\"}",
+            "state": "answered",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418486.412728
+          }
+        }
+      ],
+      "outgoing_simulated_messages": [],
+      "persisted_state": {
+        "schema": "fm-whatsapp-status.v1",
+        "cursor": 10,
+        "halt": null,
+        "supervision": "checkpoint",
+        "poll_diagnostic": null,
+        "requests": [
+          {
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "state": "decision",
+            "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b"
+          },
+          {
+            "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+            "state": "answered",
+            "note_id": null
+          },
+          {
+            "request": "wa-717cc97c97354679b1b6381141f16f19",
+            "state": "answered",
+            "note_id": "key-d63fb0a641ace47bbc18dac98d40de7f48ea14d93964744757b6ab194ffa76dc"
+          },
+          {
+            "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+            "state": "claimed",
+            "note_id": "key-f817819972d5de25085e550e728f6960e9988ef75e98cc0172fc24e642973feb"
+          },
+          {
+            "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e",
+            "state": "claimed",
+            "note_id": "key-3d8a5414836748bbf0b6581d3459661dd4ea08e33674a432965fbc35b323f5f9"
+          },
+          {
+            "request": "wa-a2ad52b15eb29c558328601b2e6922eb",
+            "state": "claimed",
+            "note_id": "key-67cb5581909c314f52657ff820a4d72231d1453b09a2f764db2699665080a836"
+          },
+          {
+            "request": "wa-92382d828dde19468f1a8dd75c790a1b",
+            "state": "claimed",
+            "note_id": "key-990f423ab397cb72ee794f7bdc1a8ad72c92bb4c39b143a96449b484d280a642"
+          },
+          {
+            "request": "wa-310ac328131f030e9e0458c00fcb35ea",
+            "state": "claimed",
+            "note_id": "key-cd090944b1f93d8836959f34cac64a7f89bd196c56bf39ffb51d1ec0cedd8bf1"
+          },
+          {
+            "request": "wa-23568a0fc39ce0bdff579df17682a1f9",
+            "state": "claimed",
+            "note_id": "key-4ead1589b51d731aa5365dda91a1d285935836a2f397652f7948b68bc5de0874"
+          },
+          {
+            "request": "wa-a87cee26cd3dd54a5da481043175c86f",
+            "state": "answered",
+            "note_id": null
+          }
+        ],
+        "responses": [
+          {
+            "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "received",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "at": 1789418184.042302
+          },
+          {
+            "event": "event-1789418184412948000",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "decision",
+            "body": "Autoriza a revisão?\nAção: revisar fixture\nRevisão: v1\nPara autorizar esta ação, responda: aprovar c2a87950e70cdfb4",
+            "at": 1789418184.535788
+          },
+          {
+            "event": "wa-701c9e8d4574b80cc3c2da90e4d249eb.clarify",
+            "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+            "kind": "notice",
+            "body": "Nenhuma ação foi aprovada. Responda com o código da pergunta vigente: aprovar CÓDIGO. Uma confirmação genérica não escolhe entre tarefas.",
+            "at": 1789418485.412728
+          },
+          {
+            "event": "wa-717cc97c97354679b1b6381141f16f19.received",
+            "request": "wa-717cc97c97354679b1b6381141f16f19",
+            "kind": "received",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "at": 1789418486.412728
+          },
+          {
+            "event": "event-1789418184912310000",
+            "request": "wa-717cc97c97354679b1b6381141f16f19",
+            "kind": "reply",
+            "body": "Quer um resumo?",
+            "at": 1789418486.412728
+          },
+          {
+            "event": "wa-daede0a38cc014d92f45c0972f4eb503.received",
+            "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+            "kind": "received",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "at": 1789418486.412728
+          },
+          {
+            "event": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e.received",
+            "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e",
+            "kind": "received",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "at": 1789418486.412728
+          },
+          {
+            "event": "wa-a2ad52b15eb29c558328601b2e6922eb.received",
+            "request": "wa-a2ad52b15eb29c558328601b2e6922eb",
+            "kind": "received",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "at": 1789418486.412728
+          },
+          {
+            "event": "wa-92382d828dde19468f1a8dd75c790a1b.received",
+            "request": "wa-92382d828dde19468f1a8dd75c790a1b",
+            "kind": "received",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "at": 1789418486.412728
+          },
+          {
+            "event": "wa-310ac328131f030e9e0458c00fcb35ea.received",
+            "request": "wa-310ac328131f030e9e0458c00fcb35ea",
+            "kind": "received",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "at": 1789418486.412728
+          },
+          {
+            "event": "wa-23568a0fc39ce0bdff579df17682a1f9.received",
+            "request": "wa-23568a0fc39ce0bdff579df17682a1f9",
+            "kind": "received",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "at": 1789418486.412728
+          },
+          {
+            "event": "wa-a87cee26cd3dd54a5da481043175c86f.clarify",
+            "request": "wa-a87cee26cd3dd54a5da481043175c86f",
+            "kind": "notice",
+            "body": "Nenhuma ação foi aprovada. Responda com o código da pergunta vigente: aprovar CÓDIGO. Uma confirmação genérica não escolhe entre tarefas.",
+            "at": 1789418486.412728
+          }
+        ],
+        "outbox": [
+          {
+            "seq": 1,
+            "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 2,
+            "event": "event-1789418184412948000",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 3,
+            "event": "wa-701c9e8d4574b80cc3c2da90e4d249eb.clarify",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 4,
+            "event": "wa-717cc97c97354679b1b6381141f16f19.received",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 5,
+            "event": "event-1789418184912310000",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 6,
+            "event": "wa-daede0a38cc014d92f45c0972f4eb503.received",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 7,
+            "event": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e.received",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 8,
+            "event": "wa-a2ad52b15eb29c558328601b2e6922eb.received",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 9,
+            "event": "wa-92382d828dde19468f1a8dd75c790a1b.received",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 10,
+            "event": "wa-310ac328131f030e9e0458c00fcb35ea.received",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 11,
+            "event": "wa-23568a0fc39ce0bdff579df17682a1f9.received",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 12,
+            "event": "wa-a87cee26cd3dd54a5da481043175c86f.clarify",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "id": "c2a87950e70cdfb4",
+          "state": "pending",
+          "answer_wamid": null,
+          "expires": 1789418485.412728
+        }
+      ]
+    },
+    {
+      "scenario": "test_decisions_bound_expiring_once_and_ambiguous",
+      "events": [
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": null,
+          "persisted_request": {
+            "wamid": "wamid.input.1",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "sender": "user:owner",
+            "stamp": 1789418189,
+            "kind": "text",
+            "body": "Analise o arquivo local",
+            "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.1\",\"text\":{\"body\":\"Analise o arquivo local\"},\"timestamp\":\"1789418189\",\"type\":\"text\"}",
+            "state": "received",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418187.770868
+          }
+        },
+        {
+          "interface": "authenticated main CLI",
+          "operation": {
+            "op": "claim",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b"
+          },
+          "response": {
+            "decisions": [],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "Analise o arquivo local",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "claimed"
+              }
+            ],
+            "related_request": null,
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [],
+            "text": "Analise o arquivo local"
+          }
+        },
+        {
+          "interface": "authenticated main CLI",
+          "operation": {
+            "op": "emit",
+            "event": "event-1789418188151617000",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "decision",
+            "body": "Autoriza a revisão?",
+            "task": {
+              "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-m6gcboj4/home",
+              "id": "analysis",
+              "revision": "v1"
+            },
+            "action": "revisar o arquivo fixture",
+            "expires": 1789418488.151613
+          },
+          "response": {
+            "decision": "f353b9b1f6d029ce",
+            "event": "event-1789418188151617000",
+            "new_event": true
+          }
+        },
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": {
+            "id": "wamid.input.2",
+            "from": "user:owner",
+            "timestamp": "1789418191",
+            "type": "text",
+            "text": {
+              "body": "Outra tarefa"
+            }
+          },
+          "persisted_request": {
+            "wamid": "wamid.input.2",
+            "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+            "sender": "user:owner",
+            "stamp": 1789418191,
+            "kind": "text",
+            "body": "Outra tarefa",
+            "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.2\",\"text\":{\"body\":\"Outra tarefa\"},\"timestamp\":\"1789418191\",\"type\":\"text\"}",
+            "state": "received",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418189.3589382
+          }
+        },
+        {
+          "interface": "authenticated main CLI",
+          "operation": {
+            "op": "claim",
+            "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+            "note_id": "key-02542b3ce9fa9cafc48e842d880381f2948e6c301334f8d9fa3dae70e86ea2e1"
+          },
+          "response": {
+            "decisions": [
+              {
+                "action": "revisar o arquivo fixture",
+                "answer_wamid": null,
+                "expires": 1789418488.151613,
+                "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-m6gcboj4/home",
+                "id": "f353b9b1f6d029ce",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "revision": "v1",
+                "state": "pending",
+                "task": "analysis"
+              }
+            ],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "Outra tarefa",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+                "state": "claimed"
+              },
+              {
+                "body": "Analise o arquivo local",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "decision"
+              }
+            ],
+            "related_request": null,
+            "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb"
+              },
+              {
+                "actor": "70574",
+                "body": "Autoriza a revisão?\nAção: revisar o arquivo fixture\nRevisão: v1\nPara autorizar esta ação, responda: aprovar f353b9b1f6d029ce",
+                "kind": "decision",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [
+              {
+                "fingerprint": "0a6494d18e78e8a2d4d2a76230d4d49a25f11f48ba6115f4e6b24d8530d60b8e",
+                "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-m6gcboj4/home",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "revision": "v1",
+                "task": "analysis"
+              }
+            ],
+            "text": "Outra tarefa"
+          }
+        },
+        {
+          "interface": "authenticated main CLI",
+          "operation": {
+            "op": "emit",
+            "event": "event-1789418188990451000",
+            "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+            "kind": "decision",
+            "body": "Autoriza a outra revisão?",
+            "task": {
+              "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-m6gcboj4/home",
+              "id": "other",
+              "revision": "v1"
+            },
+            "action": "revisar outro arquivo",
+            "expires": 1789418488.990447
+          },
+          "response": {
+            "decision": "48ceb08293359d82",
+            "event": "event-1789418188990451000",
+            "new_event": true
+          }
+        },
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": {
+            "id": "wamid.input.3",
+            "from": "user:owner",
+            "timestamp": "1789418192",
+            "type": "text",
+            "text": {
+              "body": "sim"
+            }
+          },
+          "persisted_request": {
+            "wamid": "wamid.input.3",
+            "request": "wa-717cc97c97354679b1b6381141f16f19",
+            "sender": "user:owner",
+            "stamp": 1789418192,
+            "kind": "text",
+            "body": "sim",
+            "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.3\",\"text\":{\"body\":\"sim\"},\"timestamp\":\"1789418192\",\"type\":\"text\"}",
+            "state": "answered",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418190.12165
+          }
+        },
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": {
+            "id": "wamid.input.4",
+            "from": "user:owner",
+            "timestamp": "1789418192",
+            "type": "text",
+            "text": {
+              "body": "ok"
+            }
+          },
+          "persisted_request": {
+            "wamid": "wamid.input.4",
+            "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+            "sender": "user:owner",
+            "stamp": 1789418192,
+            "kind": "text",
+            "body": "ok",
+            "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.4\",\"text\":{\"body\":\"ok\"},\"timestamp\":\"1789418192\",\"type\":\"text\"}",
+            "state": "answered",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418190.12165
+          }
+        },
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": {
+            "id": "wamid.input.5",
+            "from": "user:owner",
+            "timestamp": "1789418192",
+            "type": "text",
+            "text": {
+              "body": "aprovo"
+            }
+          },
+          "persisted_request": {
+            "wamid": "wamid.input.5",
+            "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e",
+            "sender": "user:owner",
+            "stamp": 1789418192,
+            "kind": "text",
+            "body": "aprovo",
+            "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.5\",\"text\":{\"body\":\"aprovo\"},\"timestamp\":\"1789418192\",\"type\":\"text\"}",
+            "state": "answered",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418190.12165
+          }
+        },
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": {
+            "id": "wamid.input.6",
+            "from": "user:owner",
+            "timestamp": "1789418192",
+            "type": "text",
+            "text": {
+              "body": "pode"
+            }
+          },
+          "persisted_request": {
+            "wamid": "wamid.input.6",
+            "request": "wa-a2ad52b15eb29c558328601b2e6922eb",
+            "sender": "user:owner",
+            "stamp": 1789418192,
+            "kind": "text",
+            "body": "pode",
+            "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.6\",\"text\":{\"body\":\"pode\"},\"timestamp\":\"1789418192\",\"type\":\"text\"}",
+            "state": "answered",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418190.12165
+          }
+        },
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": {
+            "id": "wamid.input.7",
+            "from": "user:owner",
+            "timestamp": "1789418192",
+            "type": "text",
+            "text": {
+              "body": "👍"
+            }
+          },
+          "persisted_request": {
+            "wamid": "wamid.input.7",
+            "request": "wa-92382d828dde19468f1a8dd75c790a1b",
+            "sender": "user:owner",
+            "stamp": 1789418192,
+            "kind": "text",
+            "body": "👍",
+            "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.7\",\"text\":{\"body\":\"👍\"},\"timestamp\":\"1789418192\",\"type\":\"text\"}",
+            "state": "answered",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418190.12165
+          }
+        },
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": {
+            "id": "wamid.input.8",
+            "from": "user:owner",
+            "timestamp": "1789418192",
+            "type": "text",
+            "text": {
+              "body": "✅"
+            }
+          },
+          "persisted_request": {
+            "wamid": "wamid.input.8",
+            "request": "wa-310ac328131f030e9e0458c00fcb35ea",
+            "sender": "user:owner",
+            "stamp": 1789418192,
+            "kind": "text",
+            "body": "✅",
+            "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.8\",\"text\":{\"body\":\"✅\"},\"timestamp\":\"1789418192\",\"type\":\"text\"}",
+            "state": "answered",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418190.12165
+          }
+        },
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": {
+            "id": "wamid.input.9",
+            "from": "user:stranger",
+            "timestamp": "1789418192",
+            "type": "text",
+            "text": {
+              "body": "aprovar f353b9b1f6d029ce"
+            }
+          },
+          "persisted_request": {
+            "wamid": "wamid.input.9",
+            "request": "wa-23568a0fc39ce0bdff579df17682a1f9",
+            "sender": "user:stranger",
+            "stamp": 1789418192,
+            "kind": "text",
+            "body": "aprovar f353b9b1f6d029ce",
+            "raw": "{\"from\":\"user:stranger\",\"id\":\"wamid.input.9\",\"text\":{\"body\":\"aprovar f353b9b1f6d029ce\"},\"timestamp\":\"1789418192\",\"type\":\"text\"}",
+            "state": "quarantined",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418190.12165
+          }
+        },
+        {
+          "interface": "incoming WhatsApp update (simulated)",
+          "input": {
+            "id": "wamid.input.10",
+            "from": "user:owner",
+            "timestamp": "1789418192",
+            "type": "text",
+            "text": {
+              "body": "aprovar f353b9b1f6d029ce"
+            }
+          },
+          "persisted_request": {
+            "wamid": "wamid.input.10",
+            "request": "wa-a87cee26cd3dd54a5da481043175c86f",
+            "sender": "user:owner",
+            "stamp": 1789418192,
+            "kind": "text",
+            "body": "aprovar f353b9b1f6d029ce",
+            "raw": "{\"from\":\"user:owner\",\"id\":\"wamid.input.10\",\"text\":{\"body\":\"aprovar f353b9b1f6d029ce\"},\"timestamp\":\"1789418192\",\"type\":\"text\"}",
+            "state": "received",
+            "note_id": null,
+            "envelope": null,
+            "received": 1789418190.12165
+          }
+        },
+        {
+          "interface": "authenticated main CLI",
+          "operation": {
+            "op": "consume-decision",
+            "id": "f353b9b1f6d029ce",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-m6gcboj4/home",
+            "task": "analysis",
+            "revision": "v2",
+            "action": "revisar o arquivo fixture"
+          },
+          "response": {
+            "error": "decision tuple mismatch"
+          }
+        },
+        {
+          "interface": "authenticated main CLI",
+          "operation": {
+            "op": "consume-decision",
+            "id": "f353b9b1f6d029ce",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-m6gcboj4/home",
+            "task": "analysis",
+            "revision": "v1",
+            "action": "revisar o arquivo fixture"
+          },
+          "response": {
+            "action": "revisar o arquivo fixture",
+            "answer_request": "wa-a87cee26cd3dd54a5da481043175c86f",
+            "id": "f353b9b1f6d029ce",
+            "new_consumption": true,
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "revision": "v1",
+            "task": "analysis"
+          }
+        },
+        {
+          "interface": "authenticated main CLI",
+          "operation": {
+            "op": "consume-decision",
+            "id": "f353b9b1f6d029ce",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "home": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-m6gcboj4/home",
+            "task": "analysis",
+            "revision": "v1",
+            "action": "revisar o arquivo fixture"
+          },
+          "response": {
+            "consumed_at": 1789418190.12165,
+            "id": "f353b9b1f6d029ce",
+            "new_consumption": false
+          }
+        }
+      ],
+      "outgoing_simulated_messages": [],
+      "persisted_state": {
+        "schema": "fm-whatsapp-status.v1",
+        "cursor": 10,
+        "halt": null,
+        "supervision": "checkpoint",
+        "poll_diagnostic": null,
+        "requests": [
+          {
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "state": "decision",
+            "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b"
+          },
+          {
+            "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+            "state": "decision",
+            "note_id": "key-02542b3ce9fa9cafc48e842d880381f2948e6c301334f8d9fa3dae70e86ea2e1"
+          },
+          {
+            "request": "wa-717cc97c97354679b1b6381141f16f19",
+            "state": "answered",
+            "note_id": null
+          },
+          {
+            "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+            "state": "answered",
+            "note_id": null
+          },
+          {
+            "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e",
+            "state": "answered",
+            "note_id": null
+          },
+          {
+            "request": "wa-a2ad52b15eb29c558328601b2e6922eb",
+            "state": "answered",
+            "note_id": null
+          },
+          {
+            "request": "wa-92382d828dde19468f1a8dd75c790a1b",
+            "state": "answered",
+            "note_id": null
+          },
+          {
+            "request": "wa-310ac328131f030e9e0458c00fcb35ea",
+            "state": "answered",
+            "note_id": null
+          },
+          {
+            "request": "wa-a87cee26cd3dd54a5da481043175c86f",
+            "state": "received",
+            "note_id": null
+          }
+        ],
+        "responses": [
+          {
+            "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "received",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "at": 1789418187.770868
+          },
+          {
+            "event": "event-1789418188151617000",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "decision",
+            "body": "Autoriza a revisão?\nAção: revisar o arquivo fixture\nRevisão: v1\nPara autorizar esta ação, responda: aprovar f353b9b1f6d029ce",
+            "at": 1789418188.3449118
+          },
+          {
+            "event": "wa-701c9e8d4574b80cc3c2da90e4d249eb.received",
+            "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+            "kind": "received",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "at": 1789418189.3589382
+          },
+          {
+            "event": "event-1789418188990451000",
+            "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+            "kind": "decision",
+            "body": "Autoriza a outra revisão?\nAção: revisar outro arquivo\nRevisão: v1\nPara autorizar esta ação, responda: aprovar 48ceb08293359d82",
+            "at": 1789418189.3589382
+          },
+          {
+            "event": "wa-717cc97c97354679b1b6381141f16f19.clarify",
+            "request": "wa-717cc97c97354679b1b6381141f16f19",
+            "kind": "notice",
+            "body": "Nenhuma ação foi aprovada. Responda com o código da pergunta vigente: aprovar CÓDIGO. Uma confirmação genérica não escolhe entre tarefas.",
+            "at": 1789418190.12165
+          },
+          {
+            "event": "wa-daede0a38cc014d92f45c0972f4eb503.clarify",
+            "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+            "kind": "notice",
+            "body": "Nenhuma ação foi aprovada. Responda com o código da pergunta vigente: aprovar CÓDIGO. Uma confirmação genérica não escolhe entre tarefas.",
+            "at": 1789418190.12165
+          },
+          {
+            "event": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e.clarify",
+            "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e",
+            "kind": "notice",
+            "body": "Nenhuma ação foi aprovada. Responda com o código da pergunta vigente: aprovar CÓDIGO. Uma confirmação genérica não escolhe entre tarefas.",
+            "at": 1789418190.12165
+          },
+          {
+            "event": "wa-a2ad52b15eb29c558328601b2e6922eb.clarify",
+            "request": "wa-a2ad52b15eb29c558328601b2e6922eb",
+            "kind": "notice",
+            "body": "Nenhuma ação foi aprovada. Responda com o código da pergunta vigente: aprovar CÓDIGO. Uma confirmação genérica não escolhe entre tarefas.",
+            "at": 1789418190.12165
+          },
+          {
+            "event": "wa-92382d828dde19468f1a8dd75c790a1b.clarify",
+            "request": "wa-92382d828dde19468f1a8dd75c790a1b",
+            "kind": "notice",
+            "body": "Nenhuma ação foi aprovada. Responda com o código da pergunta vigente: aprovar CÓDIGO. Uma confirmação genérica não escolhe entre tarefas.",
+            "at": 1789418190.12165
+          },
+          {
+            "event": "wa-310ac328131f030e9e0458c00fcb35ea.clarify",
+            "request": "wa-310ac328131f030e9e0458c00fcb35ea",
+            "kind": "notice",
+            "body": "Nenhuma ação foi aprovada. Responda com o código da pergunta vigente: aprovar CÓDIGO. Uma confirmação genérica não escolhe entre tarefas.",
+            "at": 1789418190.12165
+          },
+          {
+            "event": "wa-a87cee26cd3dd54a5da481043175c86f.decision-answer",
+            "request": "wa-a87cee26cd3dd54a5da481043175c86f",
+            "kind": "received",
+            "body": "Resposta de decisão registrada para a ação indicada; o Firstmate ainda precisa validá-la.",
+            "at": 1789418190.12165
+          }
+        ],
+        "outbox": [
+          {
+            "seq": 1,
+            "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 2,
+            "event": "event-1789418188151617000",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 3,
+            "event": "wa-701c9e8d4574b80cc3c2da90e4d249eb.received",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 4,
+            "event": "event-1789418188990451000",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 5,
+            "event": "wa-717cc97c97354679b1b6381141f16f19.clarify",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 6,
+            "event": "wa-daede0a38cc014d92f45c0972f4eb503.clarify",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 7,
+            "event": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e.clarify",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 8,
+            "event": "wa-a2ad52b15eb29c558328601b2e6922eb.clarify",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 9,
+            "event": "wa-92382d828dde19468f1a8dd75c790a1b.clarify",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 10,
+            "event": "wa-310ac328131f030e9e0458c00fcb35ea.clarify",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          },
+          {
+            "seq": 11,
+            "event": "wa-a87cee26cd3dd54a5da481043175c86f.decision-answer",
+            "part": 0,
+            "state": "pending",
+            "wamid": null,
+            "attempts": 0
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "id": "f353b9b1f6d029ce",
+          "state": "consumed",
+          "answer_wamid": "wamid.input.10",
+          "expires": 1789418488.151613
+        },
+        {
+          "id": "48ceb08293359d82",
+          "state": "pending",
+          "answer_wamid": null,
+          "expires": 1789418488.990447
+        }
+      ]
+    },
+    {
+      "scenario": "test_cli_poll_backup_disabled_service",
+      "events": [
+        {
+          "interface": "bridge CLI",
+          "arguments": [
+            "run",
+            "--once",
+            "--fixture",
+            "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-ffmd_mwo/cli-script.json"
+          ],
+          "response": {
+            "cursor": 1,
+            "halt": null,
+            "outbox": [
+              {
+                "attempts": 1,
+                "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+                "part": 0,
+                "seq": 1,
+                "state": "accepted",
+                "wamid": "wamid.simulated.1"
+              }
+            ],
+            "poll_diagnostic": null,
+            "requests": [
+              {
+                "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "queued"
+              }
+            ],
+            "responses": [
+              {
+                "at": 1789418190.28602,
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-status.v1",
+            "supervision": "checkpoint"
+          }
+        },
+        {
+          "interface": "bridge CLI",
+          "arguments": [
+            "run",
+            "--once",
+            "--fixture",
+            "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-ffmd_mwo/cli-script.json"
+          ],
+          "response": {
+            "cursor": 1,
+            "halt": null,
+            "outbox": [
+              {
+                "attempts": 1,
+                "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+                "part": 0,
+                "seq": 1,
+                "state": "accepted",
+                "wamid": "wamid.simulated.1"
+              }
+            ],
+            "poll_diagnostic": null,
+            "requests": [
+              {
+                "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "queued"
+              }
+            ],
+            "responses": [
+              {
+                "at": 1789418190.28602,
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-status.v1",
+            "supervision": "checkpoint"
+          }
+        },
+        {
+          "interface": "bridge CLI",
+          "arguments": [
+            "backup",
+            "--output",
+            "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-ffmd_mwo/backup.sqlite3"
+          ],
+          "response": {
+            "also_preserve": "FM_HOME/state/inbox keyed receipts and pending/handled notes",
+            "backup": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-ffmd_mwo/backup.sqlite3"
+          }
+        },
+        {
+          "interface": "persisted SQLite backup",
+          "inbound_rows": [
+            [
+              "wamid.input.1",
+              "queued"
+            ]
+          ]
+        },
+        {
+          "interface": "bridge CLI",
+          "arguments": [
+            "service-render",
+            "--output",
+            "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-ffmd_mwo/bridge.plist"
+          ],
+          "response": {
+            "commands_only_not_executed": {
+              "disable": "launchctl disable gui/501/local.firstmate.whatsapp.5639376ca2a3",
+              "enable": "launchctl enable gui/501/local.firstmate.whatsapp.5639376ca2a3",
+              "install": "install -m 600 /Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-ffmd_mwo/bridge.plist /Users/rodrigocampos/Library/LaunchAgents/local.firstmate.whatsapp.5639376ca2a3.plist",
+              "logs": "tail -n 50 /Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-ffmd_mwo/cli-state/service-error.log",
+              "restart": "launchctl kickstart -k gui/501/local.firstmate.whatsapp.5639376ca2a3",
+              "start": "launchctl bootstrap gui/501 /Users/rodrigocampos/Library/LaunchAgents/local.firstmate.whatsapp.5639376ca2a3.plist",
+              "stop": "launchctl bootout gui/501/local.firstmate.whatsapp.5639376ca2a3"
+            },
+            "configuration_enabled": true,
+            "disabled": true,
+            "label": "local.firstmate.whatsapp.5639376ca2a3"
+          }
+        },
+        {
+          "interface": "generated launchd configuration, parsed semantically",
+          "configuration": {
+            "Disabled": true,
+            "EnvironmentVariables": {
+              "PATH": "/Users/rodrigocampos/.local/share/pi-node/node-v22.23.2-darwin-arm64/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/codex-path:/Users/rodrigocampos/.local/jdk/jdk-21.0.12.1+1/Contents/Home/bin:/Users/rodrigocampos/.local/bin:/Users/rodrigocampos/.grok/bin:/Users/rodrigocampos/.local/share/pi-node/node-v22.23.2-darwin-arm64/bin:/opt/homebrew/opt/coreutils/libexec/gnubin:/opt/homebrew/opt/libpq/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Library/Apple/usr/bin:/Users/rodrigocampos/.codex/tmp/arg0/codex-arg0RQkNQd:/Users/rodrigocampos/.local/share/pi-node/node-v22.23.2-darwin-arm64/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/codex-path:/Users/rodrigocampos/.local/jdk/jdk-21.0.12.1+1/Contents/Home/bin:/Users/rodrigocampos/.local/bin:/Users/rodrigocampos/.grok/bin:/Users/rodrigocampos/.local/share/pi-node/node-v22.23.2-darwin-arm64/bin:/opt/homebrew/opt/coreutils/libexec/gnubin:/opt/homebrew/opt/libpq/bin:/Users/rodrigocampos/go/bin:/Users/rodrigocampos/.cargo/bin:/Users/rodrigocampos/bin:/usr/local/sbin:/Users/rodrigocampos/.maestro/bin:/Users/rodrigocampos/.maestro/bin"
+            },
+            "KeepAlive": {
+              "SuccessfulExit": false
+            },
+            "Label": "local.firstmate.whatsapp.5639376ca2a3",
+            "ProcessType": "Background",
+            "ProgramArguments": [
+              "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/bin/python3.14",
+              "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/bin/fm-whatsapp.py",
+              "--config",
+              "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-ffmd_mwo/home/config/whatsapp.json",
+              "run",
+              "--fixture",
+              "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-ffmd_mwo/cli-script.json"
+            ],
+            "RunAtLoad": true,
+            "StandardErrorPath": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-ffmd_mwo/cli-state/service-error.log",
+            "StandardOutPath": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-ffmd_mwo/cli-state/service.log",
+            "ThrottleInterval": 30,
+            "Umask": 63,
+            "WorkingDirectory": "/Users/rodrigocampos/.no-mistakes/worktrees/ecc27bb4fcbd/01M2GSJT5KN3XSXXEZX43BHXHV/.test-tmp/fm-whatsapp-test-ffmd_mwo/home"
+          },
+          "installed": false
+        }
+      ],
+      "outgoing_simulated_messages": [],
+      "persisted_state": {
+        "schema": "fm-whatsapp-status.v1",
+        "cursor": 0,
+        "halt": null,
+        "supervision": "unavailable",
+        "poll_diagnostic": null,
+        "requests": [],
+        "responses": [],
+        "outbox": []
+      },
+      "decisions": []
+    }
+  ]
+}
