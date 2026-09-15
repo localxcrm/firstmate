@@ -1,0 +1,241 @@
+{
+  "scope": "Local executable interfaces only; fixture main, simulated transport and receipts, injected STT over a generated tone. No real recipient or real speech recognition.",
+  "trials": [
+    {
+      "input_kind": "text",
+      "input_wamid": "wamid.input.1",
+      "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+      "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b",
+      "claim": {
+        "fresh_claim": true,
+        "text": "Conte as linhas do arquivo local",
+        "transcript": null
+      },
+      "simulated_recipient_messages": [
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        },
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Análise iniciada",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        },
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "O arquivo tem 3 linhas.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        }
+      ],
+      "persisted_after_reopen": {
+        "schema": "fm-whatsapp-status.v1",
+        "cursor": 2,
+        "halt": null,
+        "supervision": "checkpoint",
+        "poll_diagnostic": null,
+        "requests": [
+          {
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "state": "completed",
+            "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b"
+          }
+        ],
+        "attachments": [],
+        "responses": [
+          {
+            "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "received",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "at": 1789433781.056414
+          },
+          {
+            "event": "event-1789433781482818000",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "started",
+            "body": "Análise iniciada",
+            "at": 1789433781.625094
+          },
+          {
+            "event": "event-1789433781631984000",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "completed",
+            "body": "O arquivo tem 3 linhas.",
+            "at": 1789433781.7616022
+          }
+        ],
+        "outbox": [
+          {
+            "seq": 1,
+            "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+            "part": 0,
+            "state": "accepted",
+            "wamid": "wamid.simulated.1",
+            "attempts": 1
+          },
+          {
+            "seq": 2,
+            "event": "event-1789433781482818000",
+            "part": 0,
+            "state": "accepted",
+            "wamid": "wamid.simulated.2",
+            "attempts": 1
+          },
+          {
+            "seq": 3,
+            "event": "event-1789433781631984000",
+            "part": 0,
+            "state": "delivered",
+            "wamid": "wamid.simulated.3",
+            "attempts": 1
+          }
+        ]
+      },
+      "simulated_final_receipt": {
+        "id": "wamid.simulated.3",
+        "status": "delivered",
+        "timestamp": "1789433781",
+        "recipient_id": "user:owner"
+      },
+      "note_acknowledged": true,
+      "observed_local_claim_ms": 399,
+      "observed_local_total_ms": 703
+    },
+    {
+      "input_kind": "voice",
+      "input_wamid": "wamid.input.1",
+      "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+      "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b",
+      "claim": {
+        "fresh_claim": true,
+        "text": "Nota de voz recebida.\n\nConte as linhas do arquivo local",
+        "transcript": "Conte as linhas do arquivo local"
+      },
+      "simulated_recipient_messages": [
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        },
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Análise iniciada",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        },
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "O arquivo tem 3 linhas.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        }
+      ],
+      "persisted_after_reopen": {
+        "schema": "fm-whatsapp-status.v1",
+        "cursor": 2,
+        "halt": null,
+        "supervision": "checkpoint",
+        "poll_diagnostic": null,
+        "requests": [
+          {
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "state": "completed",
+            "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b"
+          }
+        ],
+        "attachments": [
+          {
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "audio",
+            "mime": "audio/ogg",
+            "status": "ready",
+            "error": null,
+            "attempts": 0,
+            "due": 1789433781.7992508
+          }
+        ],
+        "responses": [
+          {
+            "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "received",
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "at": 1789433781.7992508
+          },
+          {
+            "event": "event-1789433782471969000",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "started",
+            "body": "Análise iniciada",
+            "at": 1789433782.6035972
+          },
+          {
+            "event": "event-1789433782610157000",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "completed",
+            "body": "O arquivo tem 3 linhas.",
+            "at": 1789433782.738166
+          }
+        ],
+        "outbox": [
+          {
+            "seq": 1,
+            "event": "wa-cd9a792e6ec32fed0c1fa60513878024.received",
+            "part": 0,
+            "state": "accepted",
+            "wamid": "wamid.simulated.1",
+            "attempts": 1
+          },
+          {
+            "seq": 2,
+            "event": "event-1789433782471969000",
+            "part": 0,
+            "state": "accepted",
+            "wamid": "wamid.simulated.2",
+            "attempts": 1
+          },
+          {
+            "seq": 3,
+            "event": "event-1789433782610157000",
+            "part": 0,
+            "state": "delivered",
+            "wamid": "wamid.simulated.3",
+            "attempts": 1
+          }
+        ]
+      },
+      "simulated_final_receipt": {
+        "id": "wamid.simulated.3",
+        "status": "delivered",
+        "timestamp": "1789433782",
+        "recipient_id": "user:owner"
+      },
+      "note_acknowledged": true,
+      "observed_local_claim_ms": 645,
+      "observed_local_total_ms": 934
+    }
+  ]
+}

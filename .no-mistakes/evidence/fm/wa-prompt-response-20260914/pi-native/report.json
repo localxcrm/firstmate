@@ -1,0 +1,38 @@
+{
+  "pi": "0.85.1",
+  "model": "openai-codex/gpt-5.6-sol",
+  "lab": "/Users/rodrigocampos/.no-mistakes/worktrees/8dc56fce8fc4/01M2H7V37611Q811CF91PFDVKY/.no-mistakes/pi-inbox-live-pwpaw02y",
+  "transport": "synthetic inbox only",
+  "prime": {
+    "note": "key-5d712bd7dfb8e7d0d26093cb64b37ada303c6e31e8400187754bc2f2b27275e5",
+    "intake_started_ms": 1789432827688.181,
+    "published_ms": 1789432827894.5,
+    "input_ms": 1789432829724,
+    "consumed_ms": 1789432829726,
+    "reply_ms": 1789432835200,
+    "reply_latency_ms": 7512,
+    "answer": "42"
+  },
+  "idle_successor": {
+    "note": "key-c5c6633c3cc49191e0aa81599ed1ac9ff11a6d6cca4b55df04ea2456ab8585c8",
+    "intake_started_ms": 1789432836500.624,
+    "published_ms": 1789432836709.79,
+    "input_ms": 1789432837977,
+    "consumed_ms": 1789432837978,
+    "reply_ms": 1789432844401,
+    "reply_latency_ms": 7900,
+    "answer": "37"
+  },
+  "busy": {
+    "note": "key-ba7a50842d55adabfe7f5fa0869775622774cbf13178bda2634fd0d2da18500a",
+    "intake_started_ms": 1789432851552.231,
+    "published_ms": 1789432851752.1091,
+    "input_ms": 1789432853642,
+    "consumed_ms": 1789432855049,
+    "reply_ms": 1789432859838,
+    "reply_latency_ms": 8286,
+    "answer": "19",
+    "tool_released_ms": 1789432853867
+  },
+  "outcome": "passed"
+}

@@ -1,0 +1,1189 @@
+{
+  "scope": "Synthetic account and API; real SQLite, inbox helpers, authenticated fixture main CLI, local media decoders; injected speech transcription; no live WhatsApp delivery.",
+  "scenarios": [
+    {
+      "scenario": "test_real_inbox_main_result_and_delivery",
+      "main_protocol": [
+        {
+          "operation": {
+            "op": "claim",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b"
+          },
+          "result": {
+            "attachment": null,
+            "decisions": [],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "Conte as linhas do arquivo local",
+                "kind": "text",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "claimed"
+              }
+            ],
+            "input_scope": "text",
+            "related_request": null,
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [],
+            "text": "Conte as linhas do arquivo local"
+          }
+        },
+        {
+          "operation": {
+            "op": "emit",
+            "event": "event-1789433010926098000",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "started",
+            "body": "Análise iniciada",
+            "task": {
+              "home": "/Users/rodrigocampos/.no-mistakes/worktrees/8dc56fce8fc4/01M2H7V37611Q811CF91PFDVKY/.no-mistakes/test-tmp/fm-whatsapp-test-_fuappds/home",
+              "id": "analysis",
+              "revision": "v1"
+            }
+          },
+          "result": {
+            "decision": null,
+            "event": "event-1789433010926098000",
+            "new_event": true
+          }
+        },
+        {
+          "operation": {
+            "op": "emit",
+            "event": "event-1789433011042812000",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "completed",
+            "body": "O arquivo tem 3 linhas.",
+            "evidence": [
+              "/Users/rodrigocampos/.no-mistakes/worktrees/8dc56fce8fc4/01M2H7V37611Q811CF91PFDVKY/.no-mistakes/test-tmp/fm-whatsapp-test-_fuappds/sample.txt"
+            ],
+            "task": {
+              "home": "/Users/rodrigocampos/.no-mistakes/worktrees/8dc56fce8fc4/01M2H7V37611Q811CF91PFDVKY/.no-mistakes/test-tmp/fm-whatsapp-test-_fuappds/home",
+              "id": "analysis",
+              "revision": "v1"
+            }
+          },
+          "result": {
+            "decision": null,
+            "event": "event-1789433011042812000",
+            "new_event": true
+          }
+        }
+      ],
+      "inbound": [
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "wamid": "wamid.input.1",
+          "kind": "text",
+          "body": "Conte as linhas do arquivo local",
+          "state": "completed",
+          "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b"
+        }
+      ],
+      "responses": [
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "kind": "received",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado."
+        },
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "kind": "started",
+          "body": "Análise iniciada"
+        },
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "kind": "completed",
+          "body": "O arquivo tem 3 linhas."
+        }
+      ],
+      "outgoing_transport_payloads": [
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        },
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Análise iniciada",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        },
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "O arquivo tem 3 linhas.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        }
+      ],
+      "outbox": [
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+          "state": "accepted",
+          "wamid": "wamid.simulated.1"
+        },
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "body": "Análise iniciada",
+          "state": "accepted",
+          "wamid": "wamid.simulated.2"
+        },
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "body": "O arquivo tem 3 linhas.",
+          "state": "accepted",
+          "wamid": "wamid.simulated.3"
+        }
+      ],
+      "receipts": []
+    },
+    {
+      "scenario": "test_image_pdf_text_and_voice_reach_main",
+      "main_protocol": [
+        {
+          "operation": {
+            "op": "claim",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b"
+          },
+          "result": {
+            "attachment": {
+              "caption": "analise esta imagem",
+              "coverage": "complete image preview",
+              "extracted_text": null,
+              "filename": "anexo.png",
+              "frames": [
+                {
+                  "height": 1,
+                  "path": "/Users/rodrigocampos/.no-mistakes/worktrees/8dc56fce8fc4/01M2H7V37611Q811CF91PFDVKY/.no-mistakes/test-tmp/fm-whatsapp-test-41u0gtvh/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/image/payload.jpg",
+                  "width": 1
+                }
+              ],
+              "kind": "image",
+              "mime": "image/png",
+              "path": "/Users/rodrigocampos/.no-mistakes/worktrees/8dc56fce8fc4/01M2H7V37611Q811CF91PFDVKY/.no-mistakes/test-tmp/fm-whatsapp-test-41u0gtvh/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.png",
+              "transcript": null,
+              "voice": false
+            },
+            "decisions": [],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "analise esta imagem",
+                "kind": "image",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "claimed"
+              }
+            ],
+            "input_scope": "interpret_attachment",
+            "related_request": null,
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [],
+            "text": "analise esta imagem"
+          }
+        },
+        {
+          "operation": {
+            "op": "emit",
+            "event": "event-1789433018397951000",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "reply",
+            "body": "Vi a imagem de um pixel."
+          },
+          "result": {
+            "decision": null,
+            "event": "event-1789433018397951000",
+            "new_event": true
+          }
+        },
+        {
+          "operation": {
+            "op": "claim",
+            "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+            "note_id": "key-02542b3ce9fa9cafc48e842d880381f2948e6c301334f8d9fa3dae70e86ea2e1"
+          },
+          "result": {
+            "attachment": {
+              "caption": "leia o pdf",
+              "coverage": "all pages; previews plus extractable text, no OCR claim",
+              "extracted_text": "[page 1]\nRelatorio confidencial",
+              "filename": "relatorio.pdf",
+              "frames": [
+                {
+                  "height": 400,
+                  "page": 1,
+                  "path": "/Users/rodrigocampos/.no-mistakes/worktrees/8dc56fce8fc4/01M2H7V37611Q811CF91PFDVKY/.no-mistakes/test-tmp/fm-whatsapp-test-41u0gtvh/home/state/whatsapp/media/wa-701c9e8d4574b80cc3c2da90e4d249eb/page-1/payload.jpg",
+                  "width": 400
+                }
+              ],
+              "kind": "document",
+              "mime": "application/pdf",
+              "pages": 1,
+              "path": "/Users/rodrigocampos/.no-mistakes/worktrees/8dc56fce8fc4/01M2H7V37611Q811CF91PFDVKY/.no-mistakes/test-tmp/fm-whatsapp-test-41u0gtvh/home/state/whatsapp/media/wa-701c9e8d4574b80cc3c2da90e4d249eb/payload.pdf",
+              "transcript": null,
+              "voice": false
+            },
+            "decisions": [],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "leia o pdf\n\n[page 1]\nRelatorio confidencial",
+                "kind": "document",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+                "state": "claimed"
+              },
+              {
+                "body": "analise esta imagem",
+                "kind": "image",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "answered"
+              }
+            ],
+            "input_scope": "interpret_attachment",
+            "related_request": null,
+            "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb"
+              },
+              {
+                "actor": "7710",
+                "body": "Vi a imagem de um pixel.",
+                "kind": "reply",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [],
+            "text": "leia o pdf\n\n[page 1]\nRelatorio confidencial"
+          }
+        },
+        {
+          "operation": {
+            "op": "claim",
+            "request": "wa-717cc97c97354679b1b6381141f16f19",
+            "note_id": "key-d63fb0a641ace47bbc18dac98d40de7f48ea14d93964744757b6ab194ffa76dc"
+          },
+          "result": {
+            "attachment": {
+              "caption": "",
+              "coverage": "complete UTF-8 text",
+              "extracted_text": "conteudo textual do anexo",
+              "filename": "passwd",
+              "frames": [],
+              "kind": "document",
+              "mime": "text/plain",
+              "path": "/Users/rodrigocampos/.no-mistakes/worktrees/8dc56fce8fc4/01M2H7V37611Q811CF91PFDVKY/.no-mistakes/test-tmp/fm-whatsapp-test-41u0gtvh/home/state/whatsapp/media/wa-717cc97c97354679b1b6381141f16f19/payload.txt",
+              "transcript": null,
+              "voice": false
+            },
+            "decisions": [],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "Documento recebido.\n\nconteudo textual do anexo",
+                "kind": "document",
+                "request": "wa-717cc97c97354679b1b6381141f16f19",
+                "state": "claimed"
+              },
+              {
+                "body": "leia o pdf\n\n[page 1]\nRelatorio confidencial",
+                "kind": "document",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+                "state": "claimed"
+              },
+              {
+                "body": "analise esta imagem",
+                "kind": "image",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "answered"
+              }
+            ],
+            "input_scope": "interpret_attachment",
+            "related_request": null,
+            "request": "wa-717cc97c97354679b1b6381141f16f19",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-717cc97c97354679b1b6381141f16f19"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb"
+              },
+              {
+                "actor": "7710",
+                "body": "Vi a imagem de um pixel.",
+                "kind": "reply",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [],
+            "text": "Documento recebido.\n\nconteudo textual do anexo"
+          }
+        },
+        {
+          "operation": {
+            "op": "claim",
+            "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+            "note_id": "key-f817819972d5de25085e550e728f6960e9988ef75e98cc0172fc24e642973feb"
+          },
+          "result": {
+            "attachment": {
+              "caption": "",
+              "duration_seconds": 1.0065,
+              "extracted_text": null,
+              "filename": "anexo.ogg",
+              "frames": [],
+              "has_audio": true,
+              "kind": "audio",
+              "mime": "audio/ogg",
+              "path": "/Users/rodrigocampos/.no-mistakes/worktrees/8dc56fce8fc4/01M2H7V37611Q811CF91PFDVKY/.no-mistakes/test-tmp/fm-whatsapp-test-41u0gtvh/home/state/whatsapp/media/wa-daede0a38cc014d92f45c0972f4eb503/payload.ogg",
+              "speech_detected": true,
+              "transcript": "transcricao da nota de voz",
+              "voice": true
+            },
+            "decisions": [],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "Nota de voz recebida.\n\ntranscricao da nota de voz",
+                "kind": "audio",
+                "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+                "state": "claimed"
+              },
+              {
+                "body": "Documento recebido.\n\nconteudo textual do anexo",
+                "kind": "document",
+                "request": "wa-717cc97c97354679b1b6381141f16f19",
+                "state": "claimed"
+              },
+              {
+                "body": "leia o pdf\n\n[page 1]\nRelatorio confidencial",
+                "kind": "document",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+                "state": "claimed"
+              },
+              {
+                "body": "analise esta imagem",
+                "kind": "image",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "answered"
+              }
+            ],
+            "input_scope": "interpret_attachment",
+            "related_request": null,
+            "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-daede0a38cc014d92f45c0972f4eb503"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-717cc97c97354679b1b6381141f16f19"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb"
+              },
+              {
+                "actor": "7710",
+                "body": "Vi a imagem de um pixel.",
+                "kind": "reply",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [],
+            "text": "Nota de voz recebida.\n\ntranscricao da nota de voz"
+          }
+        },
+        {
+          "operation": {
+            "op": "claim",
+            "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e",
+            "note_id": "key-3d8a5414836748bbf0b6581d3459661dd4ea08e33674a432965fbc35b323f5f9"
+          },
+          "result": {
+            "attachment": null,
+            "decisions": [],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "e isso?",
+                "kind": "text",
+                "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e",
+                "state": "claimed"
+              },
+              {
+                "body": "Nota de voz recebida.\n\ntranscricao da nota de voz",
+                "kind": "audio",
+                "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+                "state": "claimed"
+              },
+              {
+                "body": "Documento recebido.\n\nconteudo textual do anexo",
+                "kind": "document",
+                "request": "wa-717cc97c97354679b1b6381141f16f19",
+                "state": "claimed"
+              },
+              {
+                "body": "leia o pdf\n\n[page 1]\nRelatorio confidencial",
+                "kind": "document",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+                "state": "claimed"
+              },
+              {
+                "body": "analise esta imagem",
+                "kind": "image",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "answered"
+              }
+            ],
+            "input_scope": "text",
+            "related_request": "wa-daede0a38cc014d92f45c0972f4eb503",
+            "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-daede0a38cc014d92f45c0972f4eb503"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-717cc97c97354679b1b6381141f16f19"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb"
+              },
+              {
+                "actor": "7710",
+                "body": "Vi a imagem de um pixel.",
+                "kind": "reply",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [],
+            "text": "e isso?"
+          }
+        }
+      ],
+      "inbound": [
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "wamid": "wamid.input.1",
+          "kind": "image",
+          "body": "analise esta imagem",
+          "state": "answered",
+          "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b"
+        },
+        {
+          "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+          "wamid": "wamid.input.2",
+          "kind": "document",
+          "body": "leia o pdf\n\n[page 1]\nRelatorio confidencial",
+          "state": "claimed",
+          "note_id": "key-02542b3ce9fa9cafc48e842d880381f2948e6c301334f8d9fa3dae70e86ea2e1"
+        },
+        {
+          "request": "wa-717cc97c97354679b1b6381141f16f19",
+          "wamid": "wamid.input.3",
+          "kind": "document",
+          "body": "Documento recebido.\n\nconteudo textual do anexo",
+          "state": "claimed",
+          "note_id": "key-d63fb0a641ace47bbc18dac98d40de7f48ea14d93964744757b6ab194ffa76dc"
+        },
+        {
+          "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+          "wamid": "wamid.input.4",
+          "kind": "audio",
+          "body": "Nota de voz recebida.\n\ntranscricao da nota de voz",
+          "state": "claimed",
+          "note_id": "key-f817819972d5de25085e550e728f6960e9988ef75e98cc0172fc24e642973feb"
+        },
+        {
+          "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e",
+          "wamid": "wamid.input.5",
+          "kind": "text",
+          "body": "e isso?",
+          "state": "claimed",
+          "note_id": "key-3d8a5414836748bbf0b6581d3459661dd4ea08e33674a432965fbc35b323f5f9"
+        }
+      ],
+      "responses": [
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "kind": "received",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado."
+        },
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "kind": "reply",
+          "body": "Vi a imagem de um pixel."
+        },
+        {
+          "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+          "kind": "received",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado."
+        },
+        {
+          "request": "wa-717cc97c97354679b1b6381141f16f19",
+          "kind": "received",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado."
+        },
+        {
+          "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+          "kind": "received",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado."
+        },
+        {
+          "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e",
+          "kind": "received",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado."
+        }
+      ],
+      "outgoing_transport_payloads": [],
+      "outbox": [
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+          "state": "pending",
+          "wamid": null
+        },
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "body": "Vi a imagem de um pixel.",
+          "state": "pending",
+          "wamid": null
+        },
+        {
+          "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+          "state": "pending",
+          "wamid": null
+        },
+        {
+          "request": "wa-717cc97c97354679b1b6381141f16f19",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+          "state": "pending",
+          "wamid": null
+        },
+        {
+          "request": "wa-daede0a38cc014d92f45c0972f4eb503",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+          "state": "pending",
+          "wamid": null
+        },
+        {
+          "request": "wa-d2540c7e78fc58cfcec0eca2edc8ec6e",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+          "state": "pending",
+          "wamid": null
+        }
+      ],
+      "receipts": []
+    },
+    {
+      "scenario": "test_voice_transcript_to_correlated_text_and_delivered_receipt",
+      "main_protocol": [
+        {
+          "operation": {
+            "op": "claim",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b"
+          },
+          "result": {
+            "attachment": {
+              "caption": "",
+              "duration_seconds": 1.0065,
+              "extracted_text": null,
+              "filename": "anexo.ogg",
+              "frames": [],
+              "has_audio": true,
+              "kind": "audio",
+              "mime": "audio/ogg",
+              "path": "/Users/rodrigocampos/.no-mistakes/worktrees/8dc56fce8fc4/01M2H7V37611Q811CF91PFDVKY/.no-mistakes/test-tmp/fm-whatsapp-test-mo60_8cr/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.ogg",
+              "speech_detected": true,
+              "transcript": "um dois tres quatro",
+              "voice": true
+            },
+            "decisions": [],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "Nota de voz recebida.\n\num dois tres quatro",
+                "kind": "audio",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "claimed"
+              }
+            ],
+            "input_scope": "interpret_attachment",
+            "related_request": null,
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [],
+            "text": "Nota de voz recebida.\n\num dois tres quatro"
+          }
+        },
+        {
+          "operation": {
+            "op": "emit",
+            "event": "event-1789433020980458000",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "completed",
+            "body": "A nota transcrita contém 4 palavras.",
+            "evidence": [
+              "/Users/rodrigocampos/.no-mistakes/worktrees/8dc56fce8fc4/01M2H7V37611Q811CF91PFDVKY/.no-mistakes/test-tmp/fm-whatsapp-test-mo60_8cr/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.ogg"
+            ]
+          },
+          "result": {
+            "decision": null,
+            "event": "event-1789433020980458000",
+            "new_event": true
+          }
+        }
+      ],
+      "inbound": [
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "wamid": "wamid.input.1",
+          "kind": "audio",
+          "body": "Nota de voz recebida.\n\num dois tres quatro",
+          "state": "completed",
+          "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b"
+        }
+      ],
+      "responses": [
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "kind": "received",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado."
+        },
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "kind": "completed",
+          "body": "A nota transcrita contém 4 palavras."
+        }
+      ],
+      "outgoing_transport_payloads": [
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        },
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "A nota transcrita contém 4 palavras.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        }
+      ],
+      "outbox": [
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+          "state": "accepted",
+          "wamid": "wamid.simulated.1"
+        },
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "body": "A nota transcrita contém 4 palavras.",
+          "state": "delivered",
+          "wamid": "wamid.simulated.2"
+        }
+      ],
+      "receipts": [
+        {
+          "wamid": "wamid.simulated.2",
+          "status": "delivered",
+          "stamp": "1789433022"
+        }
+      ]
+    },
+    {
+      "scenario": "test_native_video_frames_and_correlated_text_reply",
+      "main_protocol": [
+        {
+          "operation": {
+            "op": "claim",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b"
+          },
+          "result": {
+            "attachment": {
+              "caption": "Descreva a cor",
+              "coverage": "uniform sampled frames; activity between samples may be missed",
+              "duration_seconds": 2.0,
+              "extracted_text": null,
+              "filename": "anexo.mp4",
+              "frames": [
+                {
+                  "path": "/Users/rodrigocampos/.no-mistakes/worktrees/8dc56fce8fc4/01M2H7V37611Q811CF91PFDVKY/.no-mistakes/test-tmp/fm-whatsapp-test-u1setk9r/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/frame-01/payload.jpg",
+                  "timestamp_seconds": 0.0
+                },
+                {
+                  "path": "/Users/rodrigocampos/.no-mistakes/worktrees/8dc56fce8fc4/01M2H7V37611Q811CF91PFDVKY/.no-mistakes/test-tmp/fm-whatsapp-test-u1setk9r/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/frame-02/payload.jpg",
+                  "timestamp_seconds": 1.0
+                }
+              ],
+              "has_audio": false,
+              "kind": "video",
+              "mime": "video/mp4",
+              "path": "/Users/rodrigocampos/.no-mistakes/worktrees/8dc56fce8fc4/01M2H7V37611Q811CF91PFDVKY/.no-mistakes/test-tmp/fm-whatsapp-test-u1setk9r/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.mp4",
+              "transcript": null,
+              "voice": false
+            },
+            "decisions": [],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "Descreva a cor",
+                "kind": "video",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "claimed"
+              }
+            ],
+            "input_scope": "interpret_attachment",
+            "related_request": null,
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [],
+            "text": "Descreva a cor"
+          }
+        },
+        {
+          "operation": {
+            "op": "emit",
+            "event": "event-1789433022578998000",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "kind": "completed",
+            "body": "Os quadros amostrados mostram vermelho.",
+            "evidence": [
+              "/Users/rodrigocampos/.no-mistakes/worktrees/8dc56fce8fc4/01M2H7V37611Q811CF91PFDVKY/.no-mistakes/test-tmp/fm-whatsapp-test-u1setk9r/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/frame-01/payload.jpg",
+              "/Users/rodrigocampos/.no-mistakes/worktrees/8dc56fce8fc4/01M2H7V37611Q811CF91PFDVKY/.no-mistakes/test-tmp/fm-whatsapp-test-u1setk9r/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/frame-02/payload.jpg"
+            ]
+          },
+          "result": {
+            "decision": null,
+            "event": "event-1789433022578998000",
+            "new_event": true
+          }
+        }
+      ],
+      "inbound": [
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "wamid": "wamid.input.1",
+          "kind": "video",
+          "body": "Descreva a cor",
+          "state": "completed",
+          "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b"
+        }
+      ],
+      "responses": [
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "kind": "received",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado."
+        },
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "kind": "completed",
+          "body": "Os quadros amostrados mostram vermelho."
+        }
+      ],
+      "outgoing_transport_payloads": [
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        },
+        {
+          "messaging_product": "whatsapp",
+          "text": {
+            "body": "Os quadros amostrados mostram vermelho.",
+            "preview_url": false
+          },
+          "to": "user:owner",
+          "type": "text"
+        }
+      ],
+      "outbox": [
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+          "state": "accepted",
+          "wamid": "wamid.simulated.1"
+        },
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "body": "Os quadros amostrados mostram vermelho.",
+          "state": "accepted",
+          "wamid": "wamid.simulated.2"
+        }
+      ],
+      "receipts": []
+    },
+    {
+      "scenario": "test_office_files_extract_text_cells_and_slides_without_execution",
+      "main_protocol": [
+        {
+          "operation": {
+            "op": "claim",
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b"
+          },
+          "result": {
+            "attachment": {
+              "caption": "",
+              "coverage": "Office text and cached cell values only; no macros, formulas, embedded media or layout",
+              "extracted_text": "[word/document.xml]\nContract 37",
+              "filename": "anexo.docx",
+              "frames": [],
+              "kind": "document",
+              "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+              "path": "/Users/rodrigocampos/.no-mistakes/worktrees/8dc56fce8fc4/01M2H7V37611Q811CF91PFDVKY/.no-mistakes/test-tmp/fm-whatsapp-test-px566gsb/home/state/whatsapp/media/wa-cd9a792e6ec32fed0c1fa60513878024/payload.docx",
+              "transcript": null,
+              "voice": false
+            },
+            "decisions": [],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "Documento recebido.\n\n[word/document.xml]\nContract 37",
+                "kind": "document",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "claimed"
+              }
+            ],
+            "input_scope": "interpret_attachment",
+            "related_request": null,
+            "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [],
+            "text": "Documento recebido.\n\n[word/document.xml]\nContract 37"
+          }
+        },
+        {
+          "operation": {
+            "op": "claim",
+            "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+            "note_id": "key-02542b3ce9fa9cafc48e842d880381f2948e6c301334f8d9fa3dae70e86ea2e1"
+          },
+          "result": {
+            "attachment": {
+              "caption": "",
+              "coverage": "Office text and cached cell values only; no macros, formulas, embedded media or layout",
+              "extracted_text": "[slide 1: ppt/slides/slide37.xml]\nSlide 37",
+              "filename": "anexo.pptx",
+              "frames": [],
+              "kind": "document",
+              "mime": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+              "path": "/Users/rodrigocampos/.no-mistakes/worktrees/8dc56fce8fc4/01M2H7V37611Q811CF91PFDVKY/.no-mistakes/test-tmp/fm-whatsapp-test-px566gsb/home/state/whatsapp/media/wa-701c9e8d4574b80cc3c2da90e4d249eb/payload.pptx",
+              "transcript": null,
+              "voice": false
+            },
+            "decisions": [],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "Documento recebido.\n\n[slide 1: ppt/slides/slide37.xml]\nSlide 37",
+                "kind": "document",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+                "state": "claimed"
+              },
+              {
+                "body": "Documento recebido.\n\n[word/document.xml]\nContract 37",
+                "kind": "document",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "claimed"
+              }
+            ],
+            "input_scope": "interpret_attachment",
+            "related_request": null,
+            "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [],
+            "text": "Documento recebido.\n\n[slide 1: ppt/slides/slide37.xml]\nSlide 37"
+          }
+        },
+        {
+          "operation": {
+            "op": "claim",
+            "request": "wa-717cc97c97354679b1b6381141f16f19",
+            "note_id": "key-d63fb0a641ace47bbc18dac98d40de7f48ea14d93964744757b6ab194ffa76dc"
+          },
+          "result": {
+            "attachment": {
+              "caption": "",
+              "coverage": "Office text and cached cell values only; no macros, formulas, embedded media or layout",
+              "extracted_text": "[sheet 1: Paint (xl/worksheets/sheet1.xml)]\nA1: Paint\nB1: 37",
+              "filename": "anexo.xlsx",
+              "frames": [],
+              "kind": "document",
+              "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+              "path": "/Users/rodrigocampos/.no-mistakes/worktrees/8dc56fce8fc4/01M2H7V37611Q811CF91PFDVKY/.no-mistakes/test-tmp/fm-whatsapp-test-px566gsb/home/state/whatsapp/media/wa-717cc97c97354679b1b6381141f16f19/payload.xlsx",
+              "transcript": null,
+              "voice": false
+            },
+            "decisions": [],
+            "fresh_claim": true,
+            "history": [
+              {
+                "body": "Documento recebido.\n\n[sheet 1: Paint (xl/worksheets/sheet1.xml)]\nA1: Paint\nB1: 37",
+                "kind": "document",
+                "request": "wa-717cc97c97354679b1b6381141f16f19",
+                "state": "claimed"
+              },
+              {
+                "body": "Documento recebido.\n\n[slide 1: ppt/slides/slide37.xml]\nSlide 37",
+                "kind": "document",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+                "state": "claimed"
+              },
+              {
+                "body": "Documento recebido.\n\n[word/document.xml]\nContract 37",
+                "kind": "document",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+                "state": "claimed"
+              }
+            ],
+            "input_scope": "interpret_attachment",
+            "related_request": null,
+            "request": "wa-717cc97c97354679b1b6381141f16f19",
+            "responses": [
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-717cc97c97354679b1b6381141f16f19"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb"
+              },
+              {
+                "actor": "bridge",
+                "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+                "kind": "received",
+                "request": "wa-cd9a792e6ec32fed0c1fa60513878024"
+              }
+            ],
+            "schema": "fm-whatsapp-context.v1",
+            "state": "claimed",
+            "tasks": [],
+            "text": "Documento recebido.\n\n[sheet 1: Paint (xl/worksheets/sheet1.xml)]\nA1: Paint\nB1: 37"
+          }
+        }
+      ],
+      "inbound": [
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "wamid": "wamid.input.1",
+          "kind": "document",
+          "body": "Documento recebido.\n\n[word/document.xml]\nContract 37",
+          "state": "claimed",
+          "note_id": "key-8da0b03951e713f1bd788f90689b04a8c37805ac786fe26375b5b4b002a91f3b"
+        },
+        {
+          "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+          "wamid": "wamid.input.2",
+          "kind": "document",
+          "body": "Documento recebido.\n\n[slide 1: ppt/slides/slide37.xml]\nSlide 37",
+          "state": "claimed",
+          "note_id": "key-02542b3ce9fa9cafc48e842d880381f2948e6c301334f8d9fa3dae70e86ea2e1"
+        },
+        {
+          "request": "wa-717cc97c97354679b1b6381141f16f19",
+          "wamid": "wamid.input.3",
+          "kind": "document",
+          "body": "Documento recebido.\n\n[sheet 1: Paint (xl/worksheets/sheet1.xml)]\nA1: Paint\nB1: 37",
+          "state": "claimed",
+          "note_id": "key-d63fb0a641ace47bbc18dac98d40de7f48ea14d93964744757b6ab194ffa76dc"
+        }
+      ],
+      "responses": [
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "kind": "received",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado."
+        },
+        {
+          "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+          "kind": "received",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado."
+        },
+        {
+          "request": "wa-717cc97c97354679b1b6381141f16f19",
+          "kind": "received",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado."
+        }
+      ],
+      "outgoing_transport_payloads": [],
+      "outbox": [
+        {
+          "request": "wa-cd9a792e6ec32fed0c1fa60513878024",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+          "state": "pending",
+          "wamid": null
+        },
+        {
+          "request": "wa-701c9e8d4574b80cc3c2da90e4d249eb",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+          "state": "pending",
+          "wamid": null
+        },
+        {
+          "request": "wa-717cc97c97354679b1b6381141f16f19",
+          "body": "Pedido recebido e preservado. O Firstmate está disponível apenas em checkpoints; o início da execução ainda não foi confirmado.",
+          "state": "pending",
+          "wamid": null
+        }
+      ],
+      "receipts": []
+    }
+  ]
+}

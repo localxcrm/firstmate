@@ -1,0 +1,23 @@
+{"at":1789432827094,"kind":"locked","data":{"pid":94477}}
+{"at":1789432829724,"kind":"input","data":{"text":"⁣FIRSTMATE_OP: v1 watcher: FIRSTMATE WATCHER WAKE: check: captain inbox notes queued: inbox:key-5d712bd7dfb8e7d0d26093cb64b37ada303c6e31e8400187754bc2f2b27275e5\n\nRun bin/fm-wake-drain.sh first and handle the queued wake. Watcher continuity is extension-owned.","source":"extension"}}
+{"at":1789432829726,"kind":"consumed","data":[{"type":"text","text":"⁣FIRSTMATE_OP: v1 watcher: FIRSTMATE WATCHER WAKE: check: captain inbox notes queued: inbox:key-5d712bd7dfb8e7d0d26093cb64b37ada303c6e31e8400187754bc2f2b27275e5\n\nRun bin/fm-wake-drain.sh first and handle the queued wake. Watcher continuity is extension-owned."}]}
+{"at":1789432832724,"kind":"read","data":["key-5d712bd7dfb8e7d0d26093cb64b37ada303c6e31e8400187754bc2f2b27275e5"]}
+{"at":1789432835200,"kind":"reply","data":{"id":"key-5d712bd7dfb8e7d0d26093cb64b37ada303c6e31e8400187754bc2f2b27275e5","answer":"42"}}
+{"at":1789432835456,"kind":"acknowledged","data":{"id":"key-5d712bd7dfb8e7d0d26093cb64b37ada303c6e31e8400187754bc2f2b27275e5"}}
+{"at":1789432836475,"kind":"settled","data":{}}
+{"at":1789432837977,"kind":"input","data":{"text":"⁣FIRSTMATE_OP: v1 watcher: FIRSTMATE WATCHER WAKE: check: captain inbox notes queued: inbox:key-c5c6633c3cc49191e0aa81599ed1ac9ff11a6d6cca4b55df04ea2456ab8585c8\n\nRun bin/fm-wake-drain.sh first and handle the queued wake. Watcher continuity is extension-owned.","source":"extension"}}
+{"at":1789432837978,"kind":"consumed","data":[{"type":"text","text":"⁣FIRSTMATE_OP: v1 watcher: FIRSTMATE WATCHER WAKE: check: captain inbox notes queued: inbox:key-c5c6633c3cc49191e0aa81599ed1ac9ff11a6d6cca4b55df04ea2456ab8585c8\n\nRun bin/fm-wake-drain.sh first and handle the queued wake. Watcher continuity is extension-owned."}]}
+{"at":1789432840244,"kind":"read","data":["key-c5c6633c3cc49191e0aa81599ed1ac9ff11a6d6cca4b55df04ea2456ab8585c8"]}
+{"at":1789432844401,"kind":"reply","data":{"id":"key-c5c6633c3cc49191e0aa81599ed1ac9ff11a6d6cca4b55df04ea2456ab8585c8","answer":"37"}}
+{"at":1789432844656,"kind":"acknowledged","data":{"id":"key-c5c6633c3cc49191e0aa81599ed1ac9ff11a6d6cca4b55df04ea2456ab8585c8"}}
+{"at":1789432846753,"kind":"settled","data":{}}
+{"at":1789432846859,"kind":"input","data":{"text":"Run the controlled busy probe now.","source":"rpc"}}
+{"at":1789432846860,"kind":"consumed","data":[{"type":"text","text":"Run the controlled busy probe now."}]}
+{"at":1789432851319,"kind":"busy-start","data":{}}
+{"at":1789432853642,"kind":"input","data":{"text":"⁣FIRSTMATE_OP: v1 watcher: FIRSTMATE WATCHER WAKE: check: captain inbox notes queued: inbox:key-ba7a50842d55adabfe7f5fa0869775622774cbf13178bda2634fd0d2da18500a\n\nRun bin/fm-wake-drain.sh first and handle the queued wake. Watcher continuity is extension-owned.","source":"extension","streamingBehavior":"followUp"}}
+{"at":1789432853867,"kind":"busy-end","data":{}}
+{"at":1789432855049,"kind":"consumed","data":[{"type":"text","text":"⁣FIRSTMATE_OP: v1 watcher: FIRSTMATE WATCHER WAKE: check: captain inbox notes queued: inbox:key-ba7a50842d55adabfe7f5fa0869775622774cbf13178bda2634fd0d2da18500a\n\nRun bin/fm-wake-drain.sh first and handle the queued wake. Watcher continuity is extension-owned."}]}
+{"at":1789432857338,"kind":"read","data":["key-ba7a50842d55adabfe7f5fa0869775622774cbf13178bda2634fd0d2da18500a"]}
+{"at":1789432859838,"kind":"reply","data":{"id":"key-ba7a50842d55adabfe7f5fa0869775622774cbf13178bda2634fd0d2da18500a","answer":"19"}}
+{"at":1789432860069,"kind":"acknowledged","data":{"id":"key-ba7a50842d55adabfe7f5fa0869775622774cbf13178bda2634fd0d2da18500a"}}
+{"at":1789432861392,"kind":"settled","data":{}}
